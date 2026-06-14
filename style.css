@@ -521,3 +521,50 @@ body {
     padding: 10px 22px;
   }
 }
+
+/* ================================
+   ロゴアニメーション（ネオン点滅 + 光の走り）
+================================ */
+
+/* ゆっくり点滅するネオン */
+.logo.neon {
+  animation: neonPulse 3.5s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
+}
+
+/* ホバー時に光が走るライン */
+.logo.neon::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  width: 0%;
+  height: 2px;
+  background: var(--accent2);
+  box-shadow: 0 0 12px var(--accent2);
+  transform: translateY(-50%);
+  transition: 0.5s ease;
+}
+
+.logo.neon:hover::after {
+  width: 120%;
+}
+
+/* ネオンの脈動アニメーション */
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 6px var(--accent),
+      0 0 12px var(--accent2),
+      0 0 20px var(--accent2);
+    opacity: 1;
+  }
+  50% {
+    text-shadow:
+      0 0 2px var(--accent),
+      0 0 4px var(--accent2),
+      0 0 10px var(--accent2);
+    opacity: 0.75;
+  }
+}
