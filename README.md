@@ -1,24 +1,20 @@
 # @KKW333 Portfolio
 
-青を基調としたモダンなデザインのポートフォリオサイトです。
-
-GitHub Pagesでの公開を想定して作成しており、自己紹介、スキル、資格、趣味・特技などを掲載しています。
-
----
+システムエンジニアとしての学習成果やスキル、資格情報をまとめたポートフォリオサイトです。
 
 ## 🌐 Website
 
 GitHub Pages
 
-```text
-https://KKW333.github.io/
-```
-
-※公開後にURLを修正してください。
+https://kouta200033.github.io/kouta200033.github.io/
 
 ---
 
-## 📖 About
+## 👤 Profile
+
+**Name** : @KKW333
+
+**Occupation** : システムエンジニア
 
 IT分野に強い関心を持ち、継続的な学習と資格取得を通じて知識・技術の習得に取り組んでいます。
 
@@ -30,56 +26,47 @@ IT分野に強い関心を持ち、継続的な学習と資格取得を通じて
 
 ### Programming Languages
 
-- Python
 - Java
-- JavaScript
+- Python
 - COBOL
-- C++
+- SQL
 
 ### Web Technologies
 
 - HTML5
 - CSS3
-- Responsive Design
 
-### Security & IT
+### Database
 
-- Information Security
-- Networking
-- Database
-- Algorithms
-- System Development
+- PostgreSQL
+- MySQL
 
 ### Tools
 
 - Git
-- GitHub
-- Visual Studio Code
-- Microsoft Excel 365
-- Microsoft Word 2019
 
 ---
 
-## 🏆 Certifications
+## 📜 Certifications
 
-### IT関連
+### IT
 
-- 基本情報技術者試験
-- 情報セキュリティマネジメント試験
+- Microsoft Office Specialist (Excel)
+- Microsoft Office Specialist (Word)
 - Python3エンジニア認定基礎試験
-- Microsoft Office Specialist Excel 365
-- Microsoft Office Specialist Word 2019
+- 情報セキュリティマネジメント試験
+- 基本情報技術者試験
 
-### その他
+### Others
 
-- 第二種電気工事士
 - 第一種運転免許
+- 第二種電気工事士
 
 ---
 
-## 🎯 Hobbies
+## 🎯 Interests
 
-### 📚 読書
+### 📚 Reading
 
 ミステリー小説を中心に読書を楽しんでいます。
 
@@ -89,7 +76,7 @@ IT分野に強い関心を持ち、継続的な学習と資格取得を通じて
 - 綾辻行人
 - 今村昌弘
 
-### ⚽ サッカー観戦
+### ⚽ Football
 
 主に海外リーグを観戦しています。
 
@@ -97,86 +84,73 @@ IT分野に強い関心を持ち、継続的な学習と資格取得を通じて
 - La Liga
 - FIFA World Cup
 
-### 🎬 映画鑑賞
+### 🎬 Movies
 
-主に洋画のSF・ファンタジー作品を鑑賞しています。
+洋画のSF・ファンタジー作品を中心に鑑賞しています。
 
-### 🎾 ソフトテニス
+### 🎾 Soft Tennis
 
-中学・高校の6年間、部活動として取り組んでいました。
-
----
-
-## 🛠 Tech Stack
-
-| Category | Technology |
-|-----------|------------|
-| Frontend | HTML5, CSS3 |
-| Version Control | Git, GitHub |
-| IDE / Editor | VS Code |
-| Languages | Python, Java, JavaScript, COBOL, C++ |
+中学・高校の6年間、部活動として取り組みました。
 
 ---
 
-## 📂 Project Structure
+## 📂 Repository Structure
 
 ```text
-portfolio/
+.
 ├── index.html
 ├── style.css
-└── README.md
+├── script.js
+├── README.md
+└── assets
+    ├── images
+    └── icons
 ```
 
 ---
 
-## 🚀 Local Development
+## 🚀 Features
 
-リポジトリをクローンします。
-
-```bash
-git clone https://github.com/KKW333/portfolio.git
-```
-
-ディレクトリへ移動します。
-
-```bash
-cd portfolio
-```
-
-ブラウザで以下を開きます。
-
-```text
-index.html
-```
+- レスポンシブデザイン
+- ダークモード切替
+- スムーズスクロール
+- スクロールアニメーション
+- モダンUI
+- GitHub Pages対応
 
 ---
 
-## 🌟 Future Goals
+## 🛠 Development Environment
 
-今後は以下の技術について学習・実践を進めていく予定です。
-
-- Java
-- Webアプリケーション開発
-- データベース
-- Git / GitHub 活用
-- ソフトウェア設計
-- セキュリティ技術
+| Category | Technology |
+|----------|------------|
+| Frontend | HTML5 |
+| Styling | CSS3 |
+| Script | JavaScript |
+| Version Control | Git |
+| Hosting | GitHub Pages |
 
 ---
 
-## 📫 Contact
+## 📧 Contact
 
 GitHub
 
-```text
-https://github.com/KKW333
-```
+https://github.com/kouta200033
+
+Email
+
+<kouta47406552@gmail.com>
 
 ---
 
-## 📄 License
+## 📈 Future Goals
 
-This project is released under the MIT License.
+- Java Silver取得
+- 応用情報技術者試験合格
+- Webアプリケーション開発スキル向上
+- クラウド技術（AWS）の習得
+- 個人開発プロジェクトの拡充
 
 ---
 

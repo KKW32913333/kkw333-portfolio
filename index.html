@@ -3,97 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@KKW333 | Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<title>@KKW333 Portfolio</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div id="progress-bar"></div>
 
-<nav class="navbar">
-<div class="logo">@KKW333</div>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#journey">Journey</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<button id="theme-toggle">🌙</button>
-</nav>
+<header>
+    <nav>
+        <div class="logo">@KKW333</div>
 
-<header class="hero">
-<div class="hero-content">
-<span class="badge">Portfolio 2026</span>
-<h1>Hello, I'm <span>@KKW333</span></h1>
-<h2 id="typing"></h2>
-<p>IT・Security・Programmingを中心に継続学習中。</p>
-</div>
+        <ul>
+            <li><a href="#about">自己紹介</a></li>
+            <li><a href="#skills">スキル</a></li>
+            <li><a href="#licenses">資格</a></li>
+            <li><a href="#hobby">趣味</a></li>
+            <li><a href="#contact">連絡先</a></li>
+        </ul>
+
+        <button id="themeBtn">🌙</button>
+    </nav>
 </header>
 
-<section id="about" class="fade">
-<h2>Profile</h2>
-<div class="glass-card">
-<p><strong>Role:</strong> IT Learner / Software Engineer Candidate</p>
-<p><strong>Focus:</strong> Java, Python, Security, Web Development</p>
-<p><strong>Certifications:</strong> 7+</p>
-</div>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>@KKW333</h1>
+
+        <h2>System Engineer</h2>
+
+        <p>
+            Javaを中心に学習を継続するシステムエンジニア
+        </p>
+
+        <a href="#about" class="btn">
+            Profile
+        </a>
+
+    </div>
+
 </section>
 
-<section class="fade">
-<div class="stats">
-<div><h3>7+</h3><p>Certifications</p></div>
-<div><h3>5</h3><p>Languages</p></div>
-<div><h3>2026</h3><p>Portfolio</p></div>
-</div>
+<section id="about" class="section reveal">
+
+    <h2>自己紹介</h2>
+
+    <div class="card">
+
+        <p>
+            IT分野に強い関心を持ち、
+            継続的な学習と資格取得を通じて
+            知識・技術の習得に取り組んでいます。
+        </p>
+
+        <br>
+
+        <p>
+            現在はJavaを中心としたプログラミング学習を進めながら、
+            Web技術やソフトウェア開発についても学習しています。
+        </p>
+
+    </div>
+
 </section>
 
-<section id="skills" class="fade">
-<h2>Skills</h2>
-<div class="card-grid">
-<div class="card"><h3>Programming</h3><div class="skill">Java<div class="bar"><div class="fill" style="width:75%"></div></div></div><div class="skill">Python<div class="bar"><div class="fill" style="width:80%"></div></div></div></div>
-<div class="card"><h3>Technologies</h3><div class="tags"><span>JavaScript</span><span>COBOL</span><span>C++</span><span>SQL</span><span>Git</span><span>GitHub</span></div></div>
-</div>
+<section id="skills" class="section reveal">
+
+    <h2>スキル</h2>
+
+    <div class="skill-grid">
+
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">COBOL</div>
+        <div class="skill-card">HTML/CSS</div>
+        <div class="skill-card">SQL</div>
+        <div class="skill-card">PostgreSQL</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">Git</div>
+
+    </div>
+
 </section>
 
-<section id="projects" class="fade">
-<h2>Projects</h2>
-<div class="card-grid">
-<div class="card"><h3>Portfolio Website</h3><p>モダンなポートフォリオサイト。</p></div>
-<div class="card"><h3>Java Practice</h3><p>Java学習・演習コード。</p></div>
-<div class="card"><h3>Python Practice</h3><p>Python学習記録。</p></div>
-</div>
+<section id="licenses" class="section reveal">
+
+    <h2>資格</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            Microsoft Office Specialist（Excel・Word）
+        </div>
+
+        <div class="timeline-item">
+            Python3エンジニア認定基礎試験
+        </div>
+
+        <div class="timeline-item">
+            情報セキュリティマネジメント試験
+        </div>
+
+        <div class="timeline-item">
+            基本情報技術者試験
+        </div>
+
+        <div class="timeline-item">
+            第一種運転免許
+        </div>
+
+        <div class="timeline-item">
+            第二種電気工事士
+        </div>
+
+    </div>
+
 </section>
 
-<section id="journey" class="fade">
-<h2>Learning Journey</h2>
-<div class="timeline">
-<div>基本情報技術者試験</div>
-<div>情報セキュリティマネジメント</div>
-<div>Python3エンジニア認定基礎</div>
-<div>Java学習中</div>
-<div>Next: SQL / AWS / Spring</div>
+<section id="hobby" class="section reveal">
+
+<h2>趣味・特技</h2>
+
+<div class="hobby-grid">
+
+<div class="card">
+<h3>📚 読書</h3>
+
+<p>ミステリー小説を中心に読書を楽しんでいます。</p>
+
+<ul>
+<li>アガサ・クリスティー</li>
+<li>綾辻行人</li>
+<li>今村昌弘</li>
+</ul>
+
 </div>
+
+<div class="card">
+<h3>⚽ サッカー観戦</h3>
+
+<ul>
+<li>Premier League</li>
+<li>La Liga</li>
+<li>FIFA World Cup</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🎬 映画鑑賞</h3>
+
+<p>
+洋画のSF・ファンタジー作品を中心に鑑賞しています。
+</p>
+</div>
+
+<div class="card">
+<h3>🎾 ソフトテニス</h3>
+
+<p>
+中学・高校の6年間、部活動として取り組みました。
+</p>
+</div>
+
+</div>
+
 </section>
 
-<section class="fade">
-<h2>Certifications</h2>
-<div class="tags">
-<span>基本情報技術者試験</span><span>情報セキュリティマネジメント</span>
-<span>Python3エンジニア認定基礎試験</span><span>MOS Excel 365</span>
-<span>MOS Word 2019</span><span>第二種電気工事士</span><span>第一種運転免許</span>
-</div>
-</section>
+<section id="contact" class="section reveal">
 
-<section id="contact" class="fade">
 <h2>Contact</h2>
-<div class="glass-card center">
-<a class="btn" href="https://github.com/KKW333">GitHub</a>
+
+<div class="card center">
+
+<p>
+GitHub
+</p>
+
+<a
+href="https://github.com/kouta200033/kouta200033.github.io"
+target="_blank">
+GitHub Profile
+</a>
+
+<br><br>
+
+<p>
+kouta47406552@gmail.com
+</p>
+
 </div>
+
 </section>
 
-<button id="topBtn">↑</button>
+<footer>
+<p>© 2026 @KKW333</p>
+</footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,93 +1,32 @@
-const t = 'IT・Security・Programming';
-let i = 0;
+const btn = document.getElementById("themeBtn");
 
-// タイピングアニメーション
-(function type() {
-    const typingElement = document.getElementById('typing');
+btn.addEventListener("click", () => {
 
-    if (!typingElement) return;
+document.body.classList.toggle("dark");
 
-    if (i < t.length) {
-        typingElement.textContent += t[i++];
-        setTimeout(type, 80);
-    }
-})();
-
-// フェードイン
-document.querySelectorAll('.fade').forEach(element => {
-
-    const observer = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-
-        });
-
-    });
-
-    observer.observe(element);
+btn.textContent =
+document.body.classList.contains("dark")
+? "☀️"
+: "🌙";
 
 });
 
-// ダークモード切替
-const themeButton = document.getElementById('theme-toggle');
+const reveals = document.querySelectorAll(".reveal");
 
-if (themeButton) {
+function reveal(){
 
-    themeButton.addEventListener('click', () => {
+reveals.forEach(item=>{
 
-        document.body.classList.toggle('light');
+const top = item.getBoundingClientRect().top;
 
-        localStorage.setItem(
-            'theme',
-            document.body.classList.contains('light')
-                ? 'light'
-                : 'dark'
-        );
-
-    });
-
+if(top < window.innerHeight - 100){
+item.classList.add("active");
 }
-
-// 保存されたテーマを適用
-if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
-}
-
-// スクロール進捗バー
-window.addEventListener('scroll', () => {
-
-    const documentHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    const progress =
-        (window.scrollY / documentHeight) * 100;
-
-    const progressBar =
-        document.getElementById('progress-bar');
-
-    if (progressBar) {
-        progressBar.style.width = progress + '%';
-    }
 
 });
 
-// TOPへ戻るボタン
-const topBtn = document.getElementById('topBtn');
-
-if (topBtn) {
-
-    topBtn.addEventListener('click', () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-
-    });
-
 }
+
+window.addEventListener("scroll",reveal);
+
+reveal();
