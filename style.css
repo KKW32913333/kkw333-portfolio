@@ -275,83 +275,38 @@ body {
 }
 
 /* ================================
-   開発工程（アイコン付き）
+   開発工程セクション
 ================================ */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
+  gap: 24px;
 }
 
 .process-card {
   background: var(--card);
-  padding: 28px;
+  padding: 24px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   backdrop-filter: var(--blur);
   transition: var(--transition);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* ホバー時のネオンエフェクト */
-.process-card:hover {
-  transform: translateY(-6px);
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-}
-
-/* アイコン */
-.process-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.process-card:hover .process-icon {
-  background: rgba(255, 255, 255, 0.35);
-  transform: scale(1.1);
-}
-
-.process-icon img {
-  width: 40px;
-  height: 40px;
-  opacity: 0.9;
-  transition: var(--transition);
-}
-
-.process-card:hover .process-icon img {
-  filter: brightness(1.2);
-  opacity: 1;
-}
-
-/* タイトル */
 .process-card h3 {
-  font-size: 1.25rem;
   margin-bottom: 10px;
+  font-size: 1.2rem;
   color: var(--accent);
-  transition: var(--transition);
 }
 
-.process-card:hover h3 {
-  color: white;
-}
-
-/* 説明文 */
 .process-card p {
   color: var(--text-muted);
   line-height: 1.6;
-  transition: var(--transition);
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  background: var(--accent);
+  color: white;
 }
 
 .process-card:hover p {
