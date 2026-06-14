@@ -179,34 +179,46 @@ body {
   gap: 15px;
 }
 
-/* ボタン */
+/* ================================
+   ボタン（視認性改善版）
+================================ */
 .btn {
   padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  display: inline-block;
 }
 
+/* 白背景のメインボタン */
 .primary-btn {
   background: white;
   color: var(--accent);
+  border-color: var(--accent);
 }
 
 .primary-btn:hover {
-  background: #e2e8f0;
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 12px var(--accent2);
 }
 
+/* 透明背景のゴーストボタン */
 .ghost-btn {
   background: transparent;
-  border: 1px solid white;
   color: white;
+  border: 2px solid white;
 }
 
 .ghost-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: white;
+  box-shadow: 0 0 12px var(--accent2);
 }
+
 
 /* ================================
    セクション共通
