@@ -1,210 +1,210 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@KKW333 Portfolio</title>
 
-<title>@KKW333 Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="メインナビゲーション">
+      <a href="#top" class="logo" aria-label="@KKW333 トップへ">@KKW333</a>
 
-<header>
-    <nav>
-        <div class="logo">@KKW333</div>
+      <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
 
-        <ul>
-            <li><a href="#about">自己紹介</a></li>
-            <li><a href="#skills">スキル</a></li>
-            <li><a href="#licenses">資格</a></li>
-            <li><a href="#hobby">趣味</a></li>
-            <li><a href="#contact">連絡先</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="#about">自己紹介</a></li>
+        <li><a href="#skills">スキル</a></li>
+        <li><a href="#licenses-it">資格（IT系）</a></li>
+        <li><a href="#licenses-other">資格（その他）</a></li>
+        <li><a href="#hobby">趣味</a></li>
+        <li><a href="#contact">連絡先</a></li>
+      </ul>
 
-        <button id="themeBtn">🌙</button>
+      <button id="themeBtn" class="theme-toggle" aria-label="テーマ切り替え">
+        🌙
+      </button>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="hero-label">Portfolio</p>
+        <h1 id="hero-title">@KKW333</h1>
+        <h2 class="hero-subtitle">System Engineer</h2>
 
-    <div class="hero-content">
-
-        <h1>@KKW333</h1>
-
-        <h2>System Engineer</h2>
-
-        <p>
-            Javaを中心に学習を継続するシステムエンジニア
+        <p class="hero-text">
+          エンジニア歴：5年目<br>
+          Javaを中心に、Web技術やソフトウェア開発を継続的に学習しています。
         </p>
 
-        <a href="#about" class="btn">
-            Profile
+        <div class="hero-actions">
+          <a href="#about" class="btn primary-btn">Profile</a>
+          <a href="#contact" class="btn ghost-btn">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title">自己紹介</h2>
+        <p class="section-subtitle">学び続けるエンジニアとして</p>
+      </div>
+
+      <div class="card">
+        <p>
+          IT分野に強い関心を持ち、継続的な学習と資格取得を通じて
+          知識・技術の習得に取り組んでいます。
+        </p>
+        <p>
+          現在は Java を中心としたプログラミング学習を進めながら、
+          Web技術やソフトウェア開発についても学習しています。
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section reveal" aria-labelledby="skills-title">
+      <div class="section-header">
+        <h2 id="skills-title">スキル</h2>
+        <p class="section-subtitle">言語・ツール</p>
+      </div>
+
+      <div class="skill-grid" role="list">
+        <div class="skill-card" role="listitem">Java</div>
+        <div class="skill-card" role="listitem">Python</div>
+        <div class="skill-card" role="listitem">COBOL</div>
+        <div class="skill-card" role="listitem">HTML / CSS</div>
+        <div class="skill-card" role="listitem">SQL</div>
+        <div class="skill-card" role="listitem">PostgreSQL</div>
+        <div class="skill-card" role="listitem">MySQL</div>
+        <div class="skill-card" role="listitem">Git</div>
+      </div>
+    </section>
+
+    <section id="licenses-it" class="section reveal" aria-labelledby="licenses-it-title">
+      <div class="section-header">
+        <h2 id="licenses-it-title">資格（IT系）</h2>
+        <p class="section-subtitle">学習の軌跡</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3 class="timeline-title">Microsoft Office Specialist（Excel・Word）</h3>
+          <p class="timeline-desc">Officeツールの基礎〜応用操作を体系的に習得。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">Python3エンジニア認定基礎試験</h3>
+          <p class="timeline-desc">Pythonの基本文法・標準ライブラリの理解。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">情報セキュリティマネジメント試験</h3>
+          <p class="timeline-desc">情報セキュリティの基礎理論と実務知識。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">基本情報技術者試験</h3>
+          <p class="timeline-desc">IT全般の基礎知識とアルゴリズム・設計の理解。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="licenses-other" class="section reveal" aria-labelledby="licenses-other-title">
+      <div class="section-header">
+        <h2 id="licenses-other-title">資格（その他）</h2>
+        <p class="section-subtitle">IT以外のスキル</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3 class="timeline-title">第一種運転免許</h3>
+          <p class="timeline-desc">安全運転への意識と責任感。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">第二種電気工事士</h3>
+          <p class="timeline-desc">電気設備に関する基礎知識と実務スキル。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="hobby" class="section reveal" aria-labelledby="hobby-title">
+      <div class="section-header">
+        <h2 id="hobby-title">趣味・特技</h2>
+        <p class="section-subtitle">インプットとリフレッシュ</p>
+      </div>
+
+      <div class="hobby-grid">
+        <article class="card">
+          <h3>📚 読書</h3>
+          <p>ミステリー小説を中心に読書を楽しんでいます。</p>
+          <p class="card-label">好きな小説家</p>
+          <ul>
+            <li>アガサ・クリスティー</li>
+            <li>綾辻行人</li>
+            <li>今村昌弘</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>⚽ サッカー観戦</h3>
+          <p>特に海外リーグが好きです。</p>
+          <ul>
+            <li>Premier League</li>
+            <li>La Liga</li>
+            <li>FIFA World Cup</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>🎬 映画鑑賞</h3>
+          <p>洋画のSF・ファンタジー作品を中心に鑑賞しています。</p>
+        </article>
+
+        <article class="card">
+          <h3>🎾 ソフトテニス</h3>
+          <p>中学・高校の6年間、部活動として取り組みました。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal" aria-labelledby="contact-title">
+      <div class="section-header">
+        <h2 id="contact-title">Contact</h2>
+        <p class="section-subtitle">ご連絡・リンク</p>
+      </div>
+
+      <div class="card center">
+        <p class="card-label">GitHub</p>
+        <a
+          href="https://github.com/kouta200033/kouta200033.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Profile
         </a>
 
-    </div>
+        <div class="divider"></div>
 
-</section>
+        <p class="card-label">Email</p>
+        <p class="email">kouta47406552@gmail.com</p>
+      </div>
+    </section>
+  </main>
 
-<section id="about" class="section reveal">
+  <footer class="site-footer">
+    <p>© 2026 @KKW333</p>
+  </footer>
 
-    <h2>自己紹介</h2>
-
-    <div class="card">
-
-        <p>
-            IT分野に強い関心を持ち、
-            継続的な学習と資格取得を通じて
-            知識・技術の習得に取り組んでいます。
-        </p>
-
-        <br>
-
-        <p>
-            現在はJavaを中心としたプログラミング学習を進めながら、
-            Web技術やソフトウェア開発についても学習しています。
-        </p>
-
-    </div>
-
-</section>
-
-<section id="skills" class="section reveal">
-
-    <h2>スキル</h2>
-
-    <div class="skill-grid">
-
-        <div class="skill-card">Java</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">COBOL</div>
-        <div class="skill-card">HTML/CSS</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">PostgreSQL</div>
-        <div class="skill-card">MySQL</div>
-        <div class="skill-card">Git</div>
-
-    </div>
-
-</section>
-
-<section id="licenses" class="section reveal">
-
-    <h2>資格</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            Microsoft Office Specialist（Excel・Word）
-        </div>
-
-        <div class="timeline-item">
-            Python3エンジニア認定基礎試験
-        </div>
-
-        <div class="timeline-item">
-            情報セキュリティマネジメント試験
-        </div>
-
-        <div class="timeline-item">
-            基本情報技術者試験
-        </div>
-
-        <div class="timeline-item">
-            第一種運転免許
-        </div>
-
-        <div class="timeline-item">
-            第二種電気工事士
-        </div>
-
-    </div>
-
-</section>
-
-<section id="hobby" class="section reveal">
-
-<h2>趣味・特技</h2>
-
-<div class="hobby-grid">
-
-<div class="card">
-<h3>📚 読書</h3>
-
-<p>ミステリー小説を中心に読書を楽しんでいます。</p>
-
-<ul>
-<li>アガサ・クリスティー</li>
-<li>綾辻行人</li>
-<li>今村昌弘</li>
-</ul>
-
-</div>
-
-<div class="card">
-<h3>⚽ サッカー観戦</h3>
-
-<ul>
-<li>Premier League</li>
-<li>La Liga</li>
-<li>FIFA World Cup</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>🎬 映画鑑賞</h3>
-
-<p>
-洋画のSF・ファンタジー作品を中心に鑑賞しています。
-</p>
-</div>
-
-<div class="card">
-<h3>🎾 ソフトテニス</h3>
-
-<p>
-中学・高校の6年間、部活動として取り組みました。
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="section reveal">
-
-<h2>Contact</h2>
-
-<div class="card center">
-
-<p>
-GitHub
-</p>
-
-<a
-href="https://github.com/kouta200033/kouta200033.github.io"
-target="_blank">
-GitHub Profile
-</a>
-
-<br><br>
-
-<p>
-kouta47406552@gmail.com
-</p>
-
-</div>
-
-</section>
-
-<footer>
-<p>© 2026 @KKW333</p>
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

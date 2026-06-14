@@ -1,32 +1,84 @@
-const btn = document.getElementById("themeBtn");
+// テーマ切り替え（ライト / ダーク）と永続化
+(function () {
+  const root = document.documentElement;
+  const themeBtn = document.getElementById("themeBtn");
 
-btn.addEventListener("click", () => {
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme === "dark") {
+    root.setAttribute("data-theme", "dark");
+    if (themeBtn) themeBtn.textContent = "☀️";
+  }
 
-document.body.classList.toggle("dark");
+  function toggleTheme() {
+    const isDark = root.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      root.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+      themeBtn.textContent = "🌙";
+    } else {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+      themeBtn.textContent = "☀️";
+    }
+  }
 
-btn.textContent =
-document.body.classList.contains("dark")
-? "☀️"
-: "🌙";
+  if (themeBtn) {
+    themeBtn.addEventListener("click", toggleTheme);
+  }
+})();
 
-});
+// スクロール時のセクションフェードイン
+(function () {
+  const reveals = document.querySelectorAll(".reveal");
 
-const reveals = document.querySelectorAll(".reveal");
+  function onScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
 
-function reveal(){
+    reveals.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        el.classList.add("visible");
+      }
+    });
+  }
 
-reveals.forEach(item=>{
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("load", onScroll);
+})();
 
-const top = item.getBoundingClientRect().top;
+// ナビゲーションのスムーススクロール & モバイルメニュー制御
+(function () {
+  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+  const navList = document.querySelector(".nav-links");
+  const navToggle = document.querySelector(".nav-toggle");
 
-if(top < window.innerHeight - 100){
-item.classList.add("active");
-}
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href").slice(1);
+      const target = document.getElementById(targetId);
+      if (!target) return;
 
-});
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 72;
 
-}
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
 
-window.addEventListener("scroll",reveal);
+      if (navList && navList.classList.contains("open")) {
+        navList.classList.remove("open");
+        if (navToggle) {
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+  });
 
-reveal();
+  if (navToggle && navList) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navList.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+})();
