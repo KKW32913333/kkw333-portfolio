@@ -325,6 +325,42 @@ body {
   letter-spacing: 1px;
   color: var(--accent2);
 }
+/* ================================
+   開発工程：PC表示の視認性向上
+================================ */
+
+/* セクションタイトルを大きく */
+#process .section-header h2 {
+  font-size: 2.4rem;
+}
+
+#process .section-header .section-subtitle {
+  font-size: 1.2rem;
+}
+
+/* テーブル全体の文字サイズアップ */
+.process-table th,
+.process-table td {
+  font-size: 1.05rem;
+  padding: 20px 24px;
+}
+
+/* 行の高さを広げて読みやすく */
+.process-table tr {
+  height: 60px;
+}
+
+/* 経験度の★を大きく */
+.level {
+  font-size: 1.2rem;
+}
+
+/* PC画面だけ適用（スマホはそのまま） */
+@media (min-width: 1024px) {
+  .process-table {
+    font-size: 1.1rem;
+  }
+}
 
 
 /* ================================
