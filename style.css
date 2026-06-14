@@ -287,42 +287,43 @@ body {
 }
 
 /* ================================
-   開発工程セクション
+   開発工程：表形式
 ================================ */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+.process-table-wrapper {
+  overflow-x: auto;
 }
 
-.process-card {
+.process-table {
+  width: 100%;
+  border-collapse: collapse;
   background: var(--card);
-  padding: 24px;
+  backdrop-filter: var(--blur);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  backdrop-filter: var(--blur);
-  transition: var(--transition);
+  overflow: hidden;
 }
 
-.process-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+.process-table th,
+.process-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.process-table th {
+  background: rgba(255,255,255,0.15);
   color: var(--accent);
+  font-weight: 600;
 }
 
-.process-card p {
-  color: var(--text-muted);
-  line-height: 1.6;
+.process-table tr:hover {
+  background: rgba(255,255,255,0.25);
 }
 
-.process-card:hover {
-  transform: translateY(-6px);
-  background: var(--accent);
-  color: white;
-}
-
-.process-card:hover p {
-  color: white;
+.level {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent2);
 }
 
 
