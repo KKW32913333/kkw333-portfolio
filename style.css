@@ -676,3 +676,18 @@ body {
     opacity: 0.75;
   }
 }
+
+.chart-card {
+  background: var(--card);
+  backdrop-filter: var(--blur);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: auto;
+}
+
+#radarChart {
+  width: 100%;
+  height: 100%;
+}
