@@ -637,7 +637,6 @@ body {
   color: var(--accent2);
 }
 
-
 /* ================================
    ロゴアニメーション（ネオン点滅 + 光の走り）
 ================================ */
@@ -682,5 +681,28 @@ body {
       0 0 4px var(--accent2),
       0 0 10px var(--accent2);
     opacity: 0.75;
+  }
+}
+
+/* ================================
+   PC レイアウト（スマホより後に書く）
+================================ */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    height: auto;
+    display: flex;
+    background: none;
+    left: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .overlay {
+    display: none;
   }
 }
