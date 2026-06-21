@@ -1,4 +1,6 @@
+// ===============================
 // テーマ切り替え
+// ===============================
 (function () {
   const root = document.documentElement;
   const btn = document.getElementById("themeBtn");
@@ -24,7 +26,10 @@
   });
 })();
 
+
+// ===============================
 // スクロールアニメーション
+// ===============================
 (function () {
   const reveals = document.querySelectorAll(".reveal");
 
@@ -41,33 +46,15 @@
   window.addEventListener("load", reveal);
 })();
 
-// スマホ用ハンバーガーメニュー
-(function () {
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav-links");
 
-  toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", !expanded);
-
-    toggle.classList.toggle("active");
-    nav.classList.toggle("open");
-  });
-
-  // メニュークリックで閉じる
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      toggle.classList.remove("active");
-      nav.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
-})();
-
+// ===============================
+// ハンバーガーメニュー（最終版）
+// ===============================
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const overlay = document.querySelector('.overlay');
 
+// メニュー開閉
 navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('active');
   navLinks.classList.toggle('open');
@@ -81,3 +68,11 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('show');
 });
 
+// メニュー内リンクを押したら閉じる
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navToggle.classList.remove("active");
+    navLinks.classList.remove("open");
+    overlay.classList.remove("show");
+  });
+});
