@@ -501,9 +501,7 @@ body {
    レスポンシブ
 ================================ */
 @media (max-width: 768px) {
-  /* ここは削除してOK。どうしても残すなら nav-links 以外に適用する */
-  }
-   
+
   .hero-title-glow {
     font-size: 3rem;
   }
@@ -511,7 +509,8 @@ body {
   .section {
     padding: 80px 20px;
   }
-
+}
+/*
 @media (max-width: 480px) {
   .hero-title-glow {
     font-size: 2.4rem;
@@ -521,6 +520,7 @@ body {
     padding: 10px 22px;
   }
 }
+*/
 /* ================================
    ハンバーガーメニュー（左配置）
 ================================ */
