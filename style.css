@@ -279,6 +279,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   left: -120px;
   filter: blur(60px);
   opacity: 0.7;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -291,6 +292,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   right: -150px;
   filter: blur(70px);
   opacity: 0.6;
+  pointer-events: none;
 }
 
 .hero-content {
