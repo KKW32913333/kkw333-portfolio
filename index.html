@@ -6,46 +6,47 @@
   <title>@KKW333 Portfolio</title>
 
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header glass-header">
-  <nav class="navbar" aria-label="メインナビゲーション">
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="header-dots" aria-hidden="true"><span></span><span></span><span></span></div>
 
-    <!-- ハンバーガーメニュー（左） -->
-    <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+    <nav class="nav-tabs" aria-label="メインナビゲーション">
+      <a href="#top" class="nav-tab logo-tab"><span class="tab-dot"></span>@KKW333</a>
+      <a href="#about" class="nav-tab"><span class="tab-dot"></span>自己紹介</a>
+      <a href="#skills" class="nav-tab"><span class="tab-dot"></span>ITスキル</a>
+      <a href="#projects" class="nav-tab"><span class="tab-dot"></span>個人開発</a>
+      <a href="#licenses-it" class="nav-tab"><span class="tab-dot"></span>取得資格</a>
+      <a href="#hobby" class="nav-tab"><span class="tab-dot"></span>趣味・特技</a>
+      <a href="#contact" class="nav-tab"><span class="tab-dot"></span>連絡先</a>
+    </nav>
+
+    <div class="header-spacer"></div>
+
+    <button id="themeBtn" class="theme-toggle" aria-label="テーマ切り替え">🌙</button>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">
+      <span class="tab-dot"></span>menu
     </button>
+  </div>
 
-    <!-- ロゴ（中央寄せ） -->
-    <a href="#top" class="logo neon">@KKW333</a>
-
-    <!-- テーマ切り替え（右） -->
-    <button id="themeBtn" class="theme-toggle" aria-label="テーマ切り替え">
-      🌙
-    </button>
-
-
-    <!-- スマホ対応ナビ -->
-    <ul class="nav-links">
-      <li><a href="#about">自己紹介</a></li>
-      <li><a href="#skills">ITスキル</a></li>
-      <li><a href="#licenses-it">取得資格</a></li>
-      <li><a href="#hobby">趣味・特技</a></li>
-      <li><a href="#contact">連絡先</a></li>
-    </ul>
-
-        <!-- 追加：背景を暗くするオーバーレイ -->
-    <div class="overlay"></div>
-    
+  <nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="モバイルナビゲーション">
+    <a href="#about"><span class="tab-dot"></span>自己紹介</a>
+    <a href="#skills"><span class="tab-dot"></span>ITスキル</a>
+    <a href="#projects"><span class="tab-dot"></span>個人開発</a>
+    <a href="#licenses-it"><span class="tab-dot"></span>取得資格</a>
+    <a href="#hobby"><span class="tab-dot"></span>趣味・特技</a>
+    <a href="#contact"><span class="tab-dot"></span>連絡先</a>
   </nav>
 </header>
 
 
 <main id="top">
-  <section class="hero hero-enhanced" aria-labelledby="hero-title">
+  <section class="hero hero-enhanced" id="hero" aria-labelledby="hero-title">
     <div class="hero-content">
       <p class="hero-label">Portfolio</p>
       <h1 id="hero-title" class="hero-title-glow">@KKW333</h1>
@@ -62,9 +63,10 @@
       </div>
     </div>
   </section>
-</main>
+
     <section id="about" class="section reveal" aria-labelledby="about-title">
       <div class="section-header">
+        <p class="section-eyebrow">About</p>
         <h2 id="about-title">自己紹介</h2>
         <p class="section-subtitle">学び続けるエンジニアとして</p>
       </div>
@@ -81,6 +83,7 @@
 
     <section id="skills" class="section reveal" aria-labelledby="skills-title">
       <div class="section-header">
+        <p class="section-eyebrow">Skills</p>
         <h2 id="skills-title">ITスキル</h2>
         <p class="section-subtitle">経験のある言語・ツール</p>
       </div>
@@ -97,8 +100,78 @@
       </div>
     </section>
 
+<section id="projects" class="section reveal" aria-labelledby="projects-title">
+  <div class="section-header">
+    <p class="section-eyebrow">Personal Projects</p>
+    <h2 id="projects-title">個人開発</h2>
+    <p class="section-subtitle">実際に手を動かして開発しているシステム</p>
+  </div>
+
+  <div class="project-window">
+    <div class="project-window-bar">
+      <div class="project-window-dots"><span></span><span></span><span></span></div>
+      <div class="project-tabs" role="tablist">
+        <button class="project-tab active" role="tab" id="tab-linkle" aria-controls="panel-linkle" aria-selected="true" data-target="panel-linkle">
+          <span class="dot"></span>Linkle
+        </button>
+        <button class="project-tab" role="tab" id="tab-shelfy" aria-controls="panel-shelfy" aria-selected="false" data-target="panel-shelfy">
+          <span class="dot"></span>Shelfy
+        </button>
+        <button class="project-tab" role="tab" id="tab-finterra" aria-controls="panel-finterra" aria-selected="false" data-target="panel-finterra">
+          <span class="dot"></span>Finterra
+        </button>
+      </div>
+    </div>
+
+    <div class="project-panels">
+      <article class="project-panel active" id="panel-linkle" role="tabpanel" aria-labelledby="tab-linkle">
+        <div class="project-panel-header">
+          <h3>Linkle</h3>
+          <span class="project-status-badge">開発中</span>
+        </div>
+        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <div class="project-tags">
+          <span class="project-tag">Coming soon</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub（準備中）</a>
+        </div>
+      </article>
+
+      <article class="project-panel" id="panel-shelfy" role="tabpanel" aria-labelledby="tab-shelfy">
+        <div class="project-panel-header">
+          <h3>Shelfy</h3>
+          <span class="project-status-badge">開発中</span>
+        </div>
+        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <div class="project-tags">
+          <span class="project-tag">Coming soon</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub（準備中）</a>
+        </div>
+      </article>
+
+      <article class="project-panel" id="panel-finterra" role="tabpanel" aria-labelledby="tab-finterra">
+        <div class="project-panel-header">
+          <h3>Finterra</h3>
+          <span class="project-status-badge">開発中</span>
+        </div>
+        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <div class="project-tags">
+          <span class="project-tag">Coming soon</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub（準備中）</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="process" class="section reveal" aria-labelledby="process-title">
   <div class="section-header">
+    <p class="section-eyebrow">Process</p>
     <h2 id="process-title">経験のある開発工程</h2>
     <p class="section-subtitle">担当した工程と経験レベル</p>
   </div>
@@ -115,38 +188,38 @@
       <tbody>
         <tr>
           <td>要件定義</td>
-          <td>顧客ヒアリング、業務整理、要件定義書作成</td>
-          <td><span class="level level-3">★★☆☆☆</span></td>
+          <td data-label="内容">顧客ヒアリング、業務整理、要件定義書作成</td>
+          <td data-label="経験度"><span class="level level-3">★★☆☆☆</span></td>
         </tr>
         <tr>
           <td>基本設計</td>
-          <td>画面設計、機能設計、ジョブネット設計</td>
-          <td><span class="level level-4">★★★★☆</span></td>
+          <td data-label="内容">画面設計、機能設計、ジョブネット設計</td>
+          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
         </tr>
         <tr>
           <td>詳細設計</td>
-          <td>クラス設計、処理フロー、DBテーブル設計</td>
-          <td><span class="level level-4">★★★☆☆</span></td>
+          <td data-label="内容">クラス設計、処理フロー、DBテーブル設計</td>
+          <td data-label="経験度"><span class="level level-4">★★★☆☆</span></td>
         </tr>
         <tr>
           <td>製造</td>
-          <td>COBOL・Java・ローコードツールを用いた開発</td>
-          <td><span class="level level-5">★★★☆☆</span></td>
+          <td data-label="内容">COBOL・Java・ローコードツールを用いた開発</td>
+          <td data-label="経験度"><span class="level level-5">★★★☆☆</span></td>
         </tr>
         <tr>
           <td>単体試験</td>
-          <td>テストケース作成、試験実施、品質確認</td>
-          <td><span class="level level-4">★★★★☆</span></td>
+          <td data-label="内容">テストケース作成、試験実施、品質確認</td>
+          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
         </tr>
         <tr>
           <td>結合・総合試験</td>
-          <td>連携動作確認、障害調査、改修対応</td>
-          <td><span class="level level-3">★★★★☆</span></td>
+          <td data-label="内容">連携動作確認、障害調査、改修対応</td>
+          <td data-label="経験度"><span class="level level-3">★★★★☆</span></td>
         </tr>
         <tr>
           <td>リリース作業</td>
-          <td>リリース準備、品質評価、本番確認</td>
-          <td><span class="level level-4">★★★★☆</span></td>
+          <td data-label="内容">リリース準備、品質評価、本番確認</td>
+          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
         </tr>
       </tbody>
     </table>
@@ -155,6 +228,7 @@
 
     <section id="licenses-it" class="section reveal" aria-labelledby="licenses-it-title">
       <div class="section-header">
+        <p class="section-eyebrow">Licenses</p>
         <h2 id="licenses-it-title">取得資格</h2>
         <p class="section-subtitle">学習の軌跡</p>
       </div>
@@ -189,6 +263,7 @@
 
     <section id="hobby" class="section reveal" aria-labelledby="hobby-title">
       <div class="section-header">
+        <p class="section-eyebrow">Hobby</p>
         <h2 id="hobby-title">趣味・特技</h2>
         <p class="section-subtitle">インプットとリフレッシュ</p>
       </div>
@@ -238,6 +313,7 @@
 
     <section id="contact" class="section reveal" aria-labelledby="contact-title">
       <div class="section-header">
+        <p class="section-eyebrow">Get in touch</p>
         <h2 id="contact-title">Contact</h2>
         <p class="section-subtitle">ご連絡・リンク</p>
       </div>
