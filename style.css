@@ -508,92 +508,70 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
 }
 
 /* ================================
-   開発工程：ステッパー
+   開発工程：表形式
 ================================ */
-.process-stepper {
-  position: relative;
+.process-table-wrapper {
+  overflow-x: auto;
 }
 
-.process-stepper::before {
-  content: "";
-  position: absolute;
-  left: 23px;
-  top: 24px;
-  bottom: 24px;
-  width: 2px;
-  background: linear-gradient(var(--accent), var(--accent2));
-  opacity: 0.3;
-}
-
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.process-step:last-child {
-  margin-bottom: 0;
-}
-
-.process-step-marker {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--card-solid);
-  border: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--accent);
-  position: relative;
-  z-index: 1;
-}
-
-.process-step-content {
-  flex: 1;
+.process-table {
+  width: 100%;
+  border-collapse: collapse;
   background: var(--card);
   backdrop-filter: var(--blur);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 18px 24px;
-  transition: var(--transition);
+  overflow: hidden;
 }
 
-.process-step-content:hover {
-  transform: translateX(4px);
+.process-table th,
+.process-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-.process-step-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
-}
-
-.process-step-head h3 {
-  font-size: 1.1rem;
+.process-table th {
+  background: rgba(255,255,255,0.15);
+  color: var(--accent);
+  font-weight: 600;
   font-family: var(--font-display);
 }
 
-.process-step-content p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
+.process-table tr:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.process-table td:first-child {
+  font-weight: 700;
+  font-family: var(--font-display);
+  position: relative;
+  padding-left: 44px;
+}
+
+.process-table tbody tr {
+  counter-increment: step;
+}
+
+.process-table tbody {
+  counter-reset: step;
+}
+
+.process-table td:first-child::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--accent2);
+  opacity: 0.8;
 }
 
 .level {
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--accent2);
-  font-size: 0.95rem;
-  white-space: nowrap;
 }
 
 /* PC表示の視認性向上 */
@@ -605,23 +583,87 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   font-size: 1.2rem;
 }
 
-@media (max-width: 600px) {
-  .process-stepper::before {
-    left: 19px;
+.process-table th,
+.process-table td {
+  font-size: 1.05rem;
+  padding: 20px 24px;
+}
+
+.process-table tr {
+  height: 60px;
+}
+
+.level {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 1024px) {
+  .process-table {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .process-table-wrapper {
+    overflow-x: visible;
   }
 
-  .process-step-marker {
-    width: 40px;
-    height: 40px;
-    font-size: 0.75rem;
+  .process-table {
+    background: transparent;
+    box-shadow: none;
   }
 
-  .process-step-content {
-    padding: 14px 18px;
+  .process-table thead {
+    display: none;
   }
 
-  .process-step-head h3 {
-    font-size: 1rem;
+  .process-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .process-table tr {
+    display: block;
+    background: var(--card);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    height: auto;
+  }
+
+  .process-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+
+  .process-table td:last-child {
+    border-bottom: none;
+  }
+
+  .process-table td:first-child {
+    display: block;
+    font-size: 1.05rem;
+    padding: 16px 16px 8px 40px;
+  }
+
+  .process-table td:nth-child(2)::before,
+  .process-table td:nth-child(3)::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-weight: 600;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    padding-top: 2px;
+  }
+
+  .process-table td:nth-child(2) {
+    text-align: right;
   }
 }
 
