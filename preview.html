@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@KKW333 Portfolio</title>
+
+  <style>
 /* ================================
    基本テーマ変数
 ================================ */
@@ -952,3 +960,439 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   }
 }
 
+
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="header-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <nav class="nav-tabs" aria-label="メインナビゲーション">
+      <a href="#top" class="nav-tab logo-tab"><span class="tab-dot"></span>@KKW333</a>
+      <a href="#about" class="nav-tab"><span class="tab-dot"></span>自己紹介</a>
+      <a href="#skills" class="nav-tab"><span class="tab-dot"></span>ITスキル</a>
+      <a href="#projects" class="nav-tab"><span class="tab-dot"></span>個人開発</a>
+      <a href="#licenses-it" class="nav-tab"><span class="tab-dot"></span>取得資格</a>
+      <a href="#hobby" class="nav-tab"><span class="tab-dot"></span>趣味・特技</a>
+      <a href="#contact" class="nav-tab"><span class="tab-dot"></span>連絡先</a>
+    </nav>
+
+    <div class="header-spacer"></div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">
+      <span class="tab-dot"></span>menu
+    </button>
+  </div>
+
+  <nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="モバイルナビゲーション">
+    <a href="#about"><span class="tab-dot"></span>自己紹介</a>
+    <a href="#skills"><span class="tab-dot"></span>ITスキル</a>
+    <a href="#projects"><span class="tab-dot"></span>個人開発</a>
+    <a href="#licenses-it"><span class="tab-dot"></span>取得資格</a>
+    <a href="#hobby"><span class="tab-dot"></span>趣味・特技</a>
+    <a href="#contact"><span class="tab-dot"></span>連絡先</a>
+  </nav>
+</header>
+
+
+<main id="top">
+  <section class="hero hero-enhanced" id="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <p class="hero-label">Portfolio</p>
+      <h1 id="hero-title" class="hero-title-glow">@KKW333</h1>
+      <h2 class="hero-subtitle">System Engineer</h2>
+
+      <p class="hero-text">
+        エンジニア歴：5年目<br>
+        Web技術やソフトウェア開発を継続的に学習しています。
+      </p>
+
+      <div class="hero-actions">
+        <a href="#about" class="btn primary-btn">Profile</a>
+        <a href="#contact" class="btn ghost-btn">Contact</a>
+      </div>
+    </div>
+  </section>
+
+    <section id="about" class="section reveal" aria-labelledby="about-title">
+      <div class="section-header">
+        <p class="section-eyebrow">About</p>
+        <h2 id="about-title">自己紹介</h2>
+        <p class="section-subtitle">学び続けるエンジニアとして</p>
+      </div>
+
+      <div class="card">
+        <p>
+          IT分野に強い関心を持ち、JavaやPythonを中心にプログラミングやWeb技術を学習しています。
+        </p>
+        <p>
+          AI技術も活用しながら、実践的なスキルの習得と継続的な成長を目指しています。
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section reveal" aria-labelledby="skills-title">
+      <div class="section-header">
+        <p class="section-eyebrow">Skills</p>
+        <h2 id="skills-title">ITスキル</h2>
+        <p class="section-subtitle">経験のある言語・ツール</p>
+      </div>
+
+      <div class="skill-grid" role="list">
+        <div class="skill-card" role="listitem">Java</div>
+        <div class="skill-card" role="listitem">Python</div>
+        <div class="skill-card" role="listitem">COBOL</div>
+        <div class="skill-card" role="listitem">EASY</div>
+        <div class="skill-card" role="listitem">HTML/CSS</div>
+        <div class="skill-card" role="listitem">PostgreSQL</div>
+        <div class="skill-card" role="listitem">MySQL</div>
+        <div class="skill-card" role="listitem">WebPerFormer</div>
+      </div>
+    </section>
+
+<section id="projects" class="section reveal" aria-labelledby="projects-title">
+  <div class="section-header">
+    <p class="section-eyebrow">Personal Projects</p>
+    <h2 id="projects-title">個人開発</h2>
+    <p class="section-subtitle">実際に手を動かして開発しているシステム</p>
+  </div>
+
+  <div class="project-window">
+    <div class="project-window-bar">
+      <div class="project-window-dots"><span></span><span></span><span></span></div>
+      <div class="project-tabs" role="tablist">
+        <button class="project-tab active" role="tab" id="tab-linkle" aria-controls="panel-linkle" aria-selected="true" data-target="panel-linkle">
+          <span class="dot"></span>Linkle
+        </button>
+        <button class="project-tab" role="tab" id="tab-shelfy" aria-controls="panel-shelfy" aria-selected="false" data-target="panel-shelfy">
+          <span class="dot"></span>Shelfy
+        </button>
+        <button class="project-tab" role="tab" id="tab-finterra" aria-controls="panel-finterra" aria-selected="false" data-target="panel-finterra">
+          <span class="dot"></span>Finterra
+        </button>
+      </div>
+    </div>
+
+    <div class="project-panels">
+      <article class="project-panel active" id="panel-linkle" role="tabpanel" aria-labelledby="tab-linkle">
+        <div class="project-panel-header">
+          <h3>Linkle</h3>
+          <span class="project-status-badge">開発中</span>
+        </div>
+        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <div class="project-tags">
+          <span class="project-tag">Coming soon</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub（準備中）</a>
+        </div>
+      </article>
+
+      <article class="project-panel" id="panel-shelfy" role="tabpanel" aria-labelledby="tab-shelfy">
+        <div class="project-panel-header">
+          <h3>Shelfy</h3>
+          <span class="project-status-badge">開発中</span>
+        </div>
+        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <div class="project-tags">
+          <span class="project-tag">Coming soon</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub（準備中）</a>
+        </div>
+      </article>
+
+      <article class="project-panel" id="panel-finterra" role="tabpanel" aria-labelledby="tab-finterra">
+        <div class="project-panel-header">
+          <h3>Finterra</h3>
+          <span class="project-status-badge">開発中</span>
+        </div>
+        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <div class="project-tags">
+          <span class="project-tag">Coming soon</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub（準備中）</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section reveal" aria-labelledby="process-title">
+  <div class="section-header">
+    <p class="section-eyebrow">Process</p>
+    <h2 id="process-title">経験のある開発工程</h2>
+    <p class="section-subtitle">担当した工程と経験レベル</p>
+  </div>
+
+  <div class="process-table-wrapper">
+    <table class="process-table">
+      <thead>
+        <tr>
+          <th>工程</th>
+          <th>内容</th>
+          <th>経験度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>要件定義</td>
+          <td data-label="内容">顧客ヒアリング、業務整理、要件定義書作成</td>
+          <td data-label="経験度"><span class="level level-3">★★☆☆☆</span></td>
+        </tr>
+        <tr>
+          <td>基本設計</td>
+          <td data-label="内容">画面設計、機能設計、ジョブネット設計</td>
+          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
+        </tr>
+        <tr>
+          <td>詳細設計</td>
+          <td data-label="内容">クラス設計、処理フロー、DBテーブル設計</td>
+          <td data-label="経験度"><span class="level level-4">★★★☆☆</span></td>
+        </tr>
+        <tr>
+          <td>製造</td>
+          <td data-label="内容">COBOL・Java・ローコードツールを用いた開発</td>
+          <td data-label="経験度"><span class="level level-5">★★★☆☆</span></td>
+        </tr>
+        <tr>
+          <td>単体試験</td>
+          <td data-label="内容">テストケース作成、試験実施、品質確認</td>
+          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
+        </tr>
+        <tr>
+          <td>結合・総合試験</td>
+          <td data-label="内容">連携動作確認、障害調査、改修対応</td>
+          <td data-label="経験度"><span class="level level-3">★★★★☆</span></td>
+        </tr>
+        <tr>
+          <td>リリース作業</td>
+          <td data-label="内容">リリース準備、品質評価、本番確認</td>
+          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+    <section id="licenses-it" class="section reveal" aria-labelledby="licenses-it-title">
+      <div class="section-header">
+        <p class="section-eyebrow">Licenses</p>
+        <h2 id="licenses-it-title">取得資格</h2>
+        <p class="section-subtitle">学習の軌跡</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3 class="timeline-title">Microsoft Office Specialist（Excel・Word）</h3>
+          <p class="timeline-desc">Officeツールの基礎〜応用操作を体系的に習得。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">Python3エンジニア認定基礎試験</h3>
+          <p class="timeline-desc">Pythonの基本文法・標準ライブラリの理解。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">情報セキュリティマネジメント試験</h3>
+          <p class="timeline-desc">情報セキュリティの基礎理論と実務知識。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">基本情報技術者試験</h3>
+          <p class="timeline-desc">IT全般の基礎知識とアルゴリズム・設計の理解。</p>
+        </article>
+
+        <article class="timeline-item">
+          <h3 class="timeline-title">第二種電気工事士</h3>
+          <p class="timeline-desc">電気設備工事に必要な基礎技能と知識。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="hobby" class="section reveal" aria-labelledby="hobby-title">
+      <div class="section-header">
+        <p class="section-eyebrow">Hobby</p>
+        <h2 id="hobby-title">趣味・特技</h2>
+        <p class="section-subtitle">インプットとリフレッシュ</p>
+      </div>
+
+      <div class="hobby-grid">
+        <article class="card">
+          <h3>📚 読書</h3>
+          <p>ミステリー小説が好き！</p>
+          <p></p>
+          <ul>
+            <li>アガサ・クリスティ</li>
+            <li>綾辻行人</li>
+            <li>今村昌弘</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>⚽ サッカー観戦</h3>
+          <p>海外リーグが好き！</p>
+          <p></p>
+          <ul>
+            <li>プレミアリーグ</li>
+            <li>ラ・リーガ</li>
+            <li>W杯</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>🎬 映画鑑賞</h3>
+          <p>洋画を中心に見ています！</p>
+          <p></p>
+         <ul>
+            <li>ロード・オブ・ザ・リング</li>
+            <li>ハリー・ポッター</li>
+            <li>ナイブズ・アウト</li>
+          </ul>          
+        </article>
+
+        <article class="card">
+          <h3>🎾 ソフトテニス</h3>
+          <p></p>
+          <p>中学・高校の6年間、部活動として取り組みました。</p>
+          <p>ダブルスでは前衛を担当していた。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal" aria-labelledby="contact-title">
+      <div class="section-header">
+        <p class="section-eyebrow">Get in touch</p>
+        <h2 id="contact-title">Contact</h2>
+        <p class="section-subtitle">ご連絡・リンク</p>
+      </div>
+
+      <div class="card center">
+        <p class="card-label">GitHub</p>
+        <a
+          href="https://github.com/KKW32913333/kkw3jack.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Profile
+        </a>
+
+        <div class="divider"></div>
+
+        <p class="card-label">Email</p>
+        <p class="email">kouta47406552@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 @KKW333</p>
+  </footer>
+
+<script>
+// ===============================
+// スクロールアニメーション
+// ===============================
+(function () {
+  const reveals = document.querySelectorAll(".reveal");
+
+  function reveal() {
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) el.classList.add("visible");
+    });
+  }
+
+  window.addEventListener("scroll", reveal);
+  window.addEventListener("load", reveal);
+})();
+
+
+// ===============================
+// モバイルメニュー（menu タブ → ドロップダウンパネル）
+// ===============================
+const menuToggle = document.getElementById('menuToggle');
+const mobileNavPanel = document.getElementById('mobileNavPanel');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mobileNavPanel.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+document.querySelectorAll('.mobile-nav-panel a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileNavPanel.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+
+// ===============================
+// スクロール連動：現在地のタブをハイライト
+// ===============================
+(function () {
+  const sections = document.querySelectorAll('main section[id]');
+  const navTabs = document.querySelectorAll('.nav-tab');
+
+  if (!sections.length || !navTabs.length) return;
+
+  const hrefFor = (id) => (id === 'hero' ? '#top' : `#${id}`);
+
+  const setActive = (id) => {
+    const target = hrefFor(id);
+    navTabs.forEach((tab) => {
+      tab.classList.toggle('active', tab.getAttribute('href') === target);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+})();
+
+
+// ===============================
+// プロジェクトタブ切り替え（Linkle / Shelfy / Finterra）
+// ===============================
+(function () {
+  const tabs = document.querySelectorAll(".project-tab");
+  const panels = document.querySelectorAll(".project-panel");
+
+  if (!tabs.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.dataset.target;
+
+      tabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      panels.forEach((p) => p.classList.remove("active"));
+
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
+})();
+
+</script>
+</body>
+</html>
