@@ -698,6 +698,21 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   gap: 22px;
 }
 
+@media (min-width: 769px) {
+  .hobby-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .hobby-grid .card p {
+    margin-bottom: 6px;
+  }
+
+  .hobby-grid .card p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* ================================
    個人開発（Projects） - コードエディタ風タブ
 ================================ */
