@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@KKW333 Portfolio</title>
+  <meta name="description" content="System Engineer @KKW333のポートフォリオサイト。IT スキル、開発工程の経験、個人開発プロジェクト（Linkle / Shelfy / Finterra）を紹介しています。">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@KKW333 Portfolio">
+  <meta property="og:description" content="System Engineer @KKW333のポートフォリオサイト。ITスキル、開発工程の経験、個人開発プロジェクトを紹介しています。">
+  <meta property="og:image" content="https://kkw32913333.github.io/kkw333-portfolio/og-image.png">
+  <meta property="og:url" content="https://kkw32913333.github.io/kkw333-portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
 /* ================================
@@ -28,21 +38,6 @@
 
   --font-display: "Space Grotesk", "Noto Sans JP", sans-serif;
   --font-body: "Noto Sans JP", "Space Grotesk", sans-serif;
-}
-
-/* ダークテーマ */
-[data-theme="dark"] {
-  --bg: #0b1120;
-  --bg-gradient: linear-gradient(135deg, #0ea5e9, #6366f1);
-  --card: rgba(30, 41, 59, 0.55);
-  --card-solid: #16213a;
-  --text: #f1f5f9;
-  --text-muted: #a8b3c7;
-  --accent: #38bdf8;
-  --accent2: #818cf8;
-  --accent3: #34d399;
-  --border: rgba(241, 245, 249, 0.1);
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* ================================
@@ -85,6 +80,29 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ================================
+   スキップリンク
+================================ */
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 12px;
+  z-index: 3000;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 /* ================================
@@ -287,6 +305,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   left: -120px;
   filter: blur(60px);
   opacity: 0.7;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -299,6 +318,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   right: -150px;
   filter: blur(70px);
   opacity: 0.6;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -457,95 +477,141 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
 }
 
 /* ================================
-   スキル
+   スキル（カテゴリ別タグ）
 ================================ */
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+.skill-panel {
+  padding: 32px;
 }
 
-.skill-card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: var(--radius);
-  text-align: center;
+.skill-cat-group {
+  margin-bottom: 26px;
+}
+
+.skill-cat-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-cat-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.skill-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
   font-weight: 600;
-  box-shadow: var(--shadow);
+  color: var(--text);
+  background: var(--bg);
   transition: var(--transition);
+  display: inline-block;
 }
 
-.skill-card:hover {
-  transform: translateY(-6px);
-  background: var(--accent);
-  color: white;
+.skill-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ================================
-   開発工程：表形式
+   開発工程：ステッパー
 ================================ */
-.process-table-wrapper {
-  overflow-x: auto;
+.process-stepper {
+  position: relative;
 }
 
-.process-table {
-  width: 100%;
-  border-collapse: collapse;
+.process-stepper::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(var(--accent), var(--accent2));
+  opacity: 0.3;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.process-step-marker {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--card-solid);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-content {
+  flex: 1;
   background: var(--card);
   backdrop-filter: var(--blur);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
-  overflow: hidden;
+  padding: 18px 24px;
+  transition: var(--transition);
 }
 
-.process-table th,
-.process-table td {
-  padding: 16px 20px;
-  text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+.process-step-content:hover {
+  transform: translateX(4px);
 }
 
-.process-table th {
-  background: rgba(255,255,255,0.15);
-  color: var(--accent);
-  font-weight: 600;
+.process-step-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.process-step-head h3 {
+  font-size: 1.1rem;
   font-family: var(--font-display);
 }
 
-.process-table tr:hover {
-  background: rgba(255,255,255,0.25);
-}
-
-.process-table td:first-child {
-  font-weight: 700;
-  font-family: var(--font-display);
-  position: relative;
-  padding-left: 44px;
-}
-
-.process-table tbody tr {
-  counter-increment: step;
-}
-
-.process-table tbody {
-  counter-reset: step;
-}
-
-.process-table td:first-child::before {
-  content: counter(step, decimal-leading-zero);
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.75rem;
-  color: var(--accent2);
-  opacity: 0.8;
+.process-step-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .level {
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--accent2);
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 /* PC表示の視認性向上 */
@@ -557,23 +623,23 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   font-size: 1.2rem;
 }
 
-.process-table th,
-.process-table td {
-  font-size: 1.05rem;
-  padding: 20px 24px;
-}
+@media (max-width: 600px) {
+  .process-stepper::before {
+    left: 19px;
+  }
 
-.process-table tr {
-  height: 60px;
-}
+  .process-step-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 0.75rem;
+  }
 
-.level {
-  font-size: 1.2rem;
-}
+  .process-step-content {
+    padding: 14px 18px;
+  }
 
-@media (min-width: 1024px) {
-  .process-table {
-    font-size: 1.1rem;
+  .process-step-head h3 {
+    font-size: 1rem;
   }
 }
 
@@ -731,6 +797,31 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   line-height: 1.7;
 }
 
+.project-screenshot {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.project-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-screenshot span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
 .project-tags {
   display: flex;
   gap: 8px;
@@ -859,70 +950,6 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   }
 }
 
-@media (max-width: 640px) {
-  .process-table-wrapper {
-    overflow-x: visible;
-  }
-
-  .process-table {
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .process-table thead {
-    display: none;
-  }
-
-  .process-table tbody {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .process-table tr {
-    display: block;
-    background: var(--card);
-    backdrop-filter: var(--blur);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow);
-    height: auto;
-  }
-
-  .process-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.95rem;
-  }
-
-  .process-table td:last-child {
-    border-bottom: none;
-  }
-
-  .process-table td:first-child {
-    display: block;
-    font-size: 1.05rem;
-    padding: 16px 16px 8px 40px;
-  }
-
-  .process-table td:nth-child(2)::before,
-  .process-table td:nth-child(3)::before {
-    content: attr(data-label);
-    flex-shrink: 0;
-    font-weight: 600;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    padding-top: 2px;
-  }
-
-  .process-table td:nth-child(2) {
-    text-align: right;
-  }
-}
-
 @media (max-width: 480px) {
   .hero-content {
     padding: 24px 18px;
@@ -967,6 +994,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<a href="#top" class="skip-link">本文へスキップ</a>
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
     <div class="header-dots" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -1008,7 +1036,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
 
       <p class="hero-text">
         エンジニア歴：5年目<br>
-        Web技術やソフトウェア開発を継続的に学習しています。
+        Web・ソフトウェア開発を継続的に学習しています。
       </p>
 
       <div class="hero-actions">
@@ -1042,15 +1070,38 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
         <p class="section-subtitle">経験のある言語・ツール</p>
       </div>
 
-      <div class="skill-grid" role="list">
-        <div class="skill-card" role="listitem">Java</div>
-        <div class="skill-card" role="listitem">Python</div>
-        <div class="skill-card" role="listitem">COBOL</div>
-        <div class="skill-card" role="listitem">EASY</div>
-        <div class="skill-card" role="listitem">HTML/CSS</div>
-        <div class="skill-card" role="listitem">PostgreSQL</div>
-        <div class="skill-card" role="listitem">MySQL</div>
-        <div class="skill-card" role="listitem">WebPerFormer</div>
+      <div class="card skill-panel">
+        <div class="skill-cat-group">
+          <p class="skill-cat-label">プログラミング言語</p>
+          <div class="skill-tag-row">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">COBOL</span>
+          </div>
+        </div>
+
+        <div class="skill-cat-group">
+          <p class="skill-cat-label">フロントエンド</p>
+          <div class="skill-tag-row">
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-cat-group">
+          <p class="skill-cat-label">データベース</p>
+          <div class="skill-tag-row">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-cat-group">
+          <p class="skill-cat-label">開発ツール(ローコード)</p>
+          <div class="skill-tag-row">
+            <span class="skill-tag">WebPerFormer</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1081,42 +1132,69 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
       <article class="project-panel active" id="panel-linkle" role="tabpanel" aria-labelledby="tab-linkle">
         <div class="project-panel-header">
           <h3>Linkle</h3>
-          <span class="project-status-badge">開発中</span>
+          <span class="project-status-badge">公開中</span>
         </div>
-        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <p class="project-desc">家族・友人グループで予定・タスク・買い物リスト・勤務表を共有できるWebアプリです。カレンダーによるスケジュール管理、買い物・ToDoリストの共同管理、勤務表のシフト集計、グループチャットや掲示板機能も搭載。プッシュ通知とPWA対応で、スマホでもアプリのように使えます。</p>
+        <div class="project-screenshot">
+          <span>📷 スクリーンショット準備中</span>
+        </div>
         <div class="project-tags">
-          <span class="project-tag">Coming soon</span>
+          <span class="project-tag">Java 17</span>
+          <span class="project-tag">Spring Boot</span>
+          <span class="project-tag">Thymeleaf</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">PWA</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">GitHub（準備中）</a>
+          <a href="https://github.com/KKW32913333/Linkle" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://schedule-app-827q.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">本番サイトを見る</a>
         </div>
       </article>
 
       <article class="project-panel" id="panel-shelfy" role="tabpanel" aria-labelledby="tab-shelfy">
         <div class="project-panel-header">
           <h3>Shelfy</h3>
-          <span class="project-status-badge">開発中</span>
+          <span class="project-status-badge">公開中</span>
         </div>
-        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <p class="project-desc">棚（Shelf）を起点に、買いすぎ・食品ロス・使い忘れをなくす在庫管理アプリです。賞味期限のカラー表示や在庫アラート、写真付きのアイテム管理に加え、在庫が0になると自動でLinkleの買い物リストに追加される連携機能も搭載。消費ログや月次レポート、スコア・バッジ機能でゲーム感覚で在庫管理を続けられます。</p>
+        <div class="project-screenshot">
+          <span>📷 スクリーンショット準備中</span>
+        </div>
         <div class="project-tags">
-          <span class="project-tag">Coming soon</span>
+          <span class="project-tag">Java 17</span>
+          <span class="project-tag">Spring Boot</span>
+          <span class="project-tag">Thymeleaf</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Cloudflare R2</span>
+          <span class="project-tag">PWA</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">GitHub（準備中）</a>
+          <a href="https://github.com/KKW32913333/shelfy" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://shelfy-1fi2.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">本番サイトを見る</a>
         </div>
       </article>
 
       <article class="project-panel" id="panel-finterra" role="tabpanel" aria-labelledby="tab-finterra">
         <div class="project-panel-header">
           <h3>Finterra</h3>
-          <span class="project-status-badge">開発中</span>
+          <span class="project-status-badge">公開中</span>
         </div>
-        <p class="project-desc">詳細情報は準備中です。READMEをいただき次第、概要・技術スタック・リンクを追加します。</p>
+        <p class="project-desc">個人・グループどちらにも対応した家計簿・資産管理アプリです。取引の登録・検索に加え、投資信託や株式・預金などの資産推移をグラフで可視化。予算超過や固定費の自動計上を通知で知らせ、レシート画像のOCR読み取りにも対応しています。</p>
+        <div class="project-screenshot">
+          <span>📷 スクリーンショット準備中</span>
+        </div>
         <div class="project-tags">
-          <span class="project-tag">Coming soon</span>
+          <span class="project-tag">Java 17</span>
+          <span class="project-tag">Spring Boot</span>
+          <span class="project-tag">Thymeleaf</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Chart.js</span>
+          <span class="project-tag">OCR</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">GitHub（準備中）</a>
+          <a href="https://github.com/KKW32913333/finterra" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://finterra.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">本番サイトを見る</a>
         </div>
       </article>
     </div>
@@ -1130,53 +1208,83 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
     <p class="section-subtitle">担当した工程と経験レベル</p>
   </div>
 
-  <div class="process-table-wrapper">
-    <table class="process-table">
-      <thead>
-        <tr>
-          <th>工程</th>
-          <th>内容</th>
-          <th>経験度</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>要件定義</td>
-          <td data-label="内容">顧客ヒアリング、業務整理、要件定義書作成</td>
-          <td data-label="経験度"><span class="level level-3">★★☆☆☆</span></td>
-        </tr>
-        <tr>
-          <td>基本設計</td>
-          <td data-label="内容">画面設計、機能設計、ジョブネット設計</td>
-          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
-        </tr>
-        <tr>
-          <td>詳細設計</td>
-          <td data-label="内容">クラス設計、処理フロー、DBテーブル設計</td>
-          <td data-label="経験度"><span class="level level-4">★★★☆☆</span></td>
-        </tr>
-        <tr>
-          <td>製造</td>
-          <td data-label="内容">COBOL・Java・ローコードツールを用いた開発</td>
-          <td data-label="経験度"><span class="level level-5">★★★☆☆</span></td>
-        </tr>
-        <tr>
-          <td>単体試験</td>
-          <td data-label="内容">テストケース作成、試験実施、品質確認</td>
-          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
-        </tr>
-        <tr>
-          <td>結合・総合試験</td>
-          <td data-label="内容">連携動作確認、障害調査、改修対応</td>
-          <td data-label="経験度"><span class="level level-3">★★★★☆</span></td>
-        </tr>
-        <tr>
-          <td>リリース作業</td>
-          <td data-label="内容">リリース準備、品質評価、本番確認</td>
-          <td data-label="経験度"><span class="level level-4">★★★★☆</span></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="process-stepper">
+    <div class="process-step">
+      <div class="process-step-marker">01</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>要件定義</h3>
+          <span class="level level-3">★★★☆☆</span>
+        </div>
+        <p>顧客ヒアリング、要件定義書作成等</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-step-marker">02</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>基本設計</h3>
+          <span class="level level-4">★★★★☆</span>
+        </div>
+        <p>画面設計、機能設計、ジョブネット設計</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-step-marker">03</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>詳細設計</h3>
+          <span class="level level-4">★★★★☆</span>
+        </div>
+        <p>クラス設計、DBテーブル設計等</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-step-marker">04</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>製造</h3>
+          <span class="level level-5">★★★★★</span>
+        </div>
+        <p>Javaやローコードツールを用いた開発</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-step-marker">05</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>単体試験</h3>
+          <span class="level level-4">★★★★☆</span>
+        </div>
+        <p>テストケース作成、試験実施、品質確認</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-step-marker">06</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>結合・総合試験</h3>
+          <span class="level level-3">★★★☆☆</span>
+        </div>
+        <p>連携動作確認、障害調査、改修対応</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-step-marker">07</div>
+      <div class="process-step-content">
+        <div class="process-step-head">
+          <h3>本番リリース作業</h3>
+          <span class="level level-4">★★★★☆</span>
+        </div>
+        <p>リリース準備、品質評価、本番確認</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1225,42 +1333,35 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
       <div class="hobby-grid">
         <article class="card">
           <h3>📚 読書</h3>
-          <p>ミステリー小説が好き！</p>
+          <p>好きな小説ベスト3（ミステリー）</p>
           <p></p>
-          <ul>
-            <li>アガサ・クリスティ</li>
-            <li>綾辻行人</li>
-            <li>今村昌弘</li>
-          </ul>
+          <p>・1位🥇 硝子の塔の殺人（知念実希人）</p>
+          <p>・2位🥈 十角館の殺人（綾辻行人）</p>
+          <p>・3位🥉 兇人邸の殺人（今村昌弘）</p>
         </article>
 
         <article class="card">
           <h3>⚽ サッカー観戦</h3>
-          <p>海外リーグが好き！</p>
+          <p>好きな選手ベスト3</p>
           <p></p>
-          <ul>
-            <li>プレミアリーグ</li>
-            <li>ラ・リーガ</li>
-            <li>W杯</li>
-          </ul>
+          <p>・1位🥇 フヴィチャ・クヴァラツヘリア</p>
+          <p>・2位🥈 パウロ・マルディーニ</p>
+          <p>・3位🥉 アンドレア・ピルロ</p>
         </article>
 
         <article class="card">
           <h3>🎬 映画鑑賞</h3>
-          <p>洋画を中心に見ています！</p>
+          <p>歴代ベスト3</p>
           <p></p>
-         <ul>
-            <li>ロード・オブ・ザ・リング</li>
-            <li>ハリー・ポッター</li>
-            <li>ナイブズ・アウト</li>
-          </ul>          
+          <p>・1位🥇 ロード・オブ・ザ・リング</p>
+          <p>・2位🥈 ハリー・ポッター</p>
+          <p>・3位🥉 ナイブズ・アウト</p>
         </article>
 
         <article class="card">
           <h3>🎾 ソフトテニス</h3>
-          <p></p>
-          <p>中学・高校の6年間、部活動として取り組みました。</p>
-          <p>ダブルスでは前衛を担当していた。</p>
+          <p>・中学〜高校の6年間、部活動に所属。</p>
+          <p>・ダブルスでは前衛を担当。</p>
         </article>
       </div>
     </section>
@@ -1275,7 +1376,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
       <div class="card center">
         <p class="card-label">GitHub</p>
         <a
-          href="https://github.com/KKW32913333/kkw3jack.github.io"
+          href="https://github.com/KKW32913333/kkw333-portfolio"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -1285,7 +1386,7 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
         <div class="divider"></div>
 
         <p class="card-label">Email</p>
-        <p class="email">kouta47406552@gmail.com</p>
+        <p class="email">kouta2000.3.3.369@icloud.com</p>
       </div>
     </section>
   </main>

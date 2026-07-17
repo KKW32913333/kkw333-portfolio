@@ -22,21 +22,6 @@
   --font-body: "Noto Sans JP", "Space Grotesk", sans-serif;
 }
 
-/* ダークテーマ */
-[data-theme="dark"] {
-  --bg: #0b1120;
-  --bg-gradient: linear-gradient(135deg, #0ea5e9, #6366f1);
-  --card: rgba(30, 41, 59, 0.55);
-  --card-solid: #16213a;
-  --text: #f1f5f9;
-  --text-muted: #a8b3c7;
-  --accent: #38bdf8;
-  --accent2: #818cf8;
-  --accent3: #34d399;
-  --border: rgba(241, 245, 249, 0.1);
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-}
-
 /* ================================
    リセット
 ================================ */
@@ -77,6 +62,29 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ================================
+   スキップリンク
+================================ */
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 12px;
+  z-index: 3000;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 /* ================================
@@ -500,70 +508,92 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
 }
 
 /* ================================
-   開発工程：表形式
+   開発工程：ステッパー
 ================================ */
-.process-table-wrapper {
-  overflow-x: auto;
+.process-stepper {
+  position: relative;
 }
 
-.process-table {
-  width: 100%;
-  border-collapse: collapse;
+.process-stepper::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(var(--accent), var(--accent2));
+  opacity: 0.3;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.process-step-marker {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--card-solid);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-content {
+  flex: 1;
   background: var(--card);
   backdrop-filter: var(--blur);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
-  overflow: hidden;
+  padding: 18px 24px;
+  transition: var(--transition);
 }
 
-.process-table th,
-.process-table td {
-  padding: 16px 20px;
-  text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+.process-step-content:hover {
+  transform: translateX(4px);
 }
 
-.process-table th {
-  background: rgba(255,255,255,0.15);
-  color: var(--accent);
-  font-weight: 600;
+.process-step-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.process-step-head h3 {
+  font-size: 1.1rem;
   font-family: var(--font-display);
 }
 
-.process-table tr:hover {
-  background: rgba(255,255,255,0.25);
-}
-
-.process-table td:first-child {
-  font-weight: 700;
-  font-family: var(--font-display);
-  position: relative;
-  padding-left: 44px;
-}
-
-.process-table tbody tr {
-  counter-increment: step;
-}
-
-.process-table tbody {
-  counter-reset: step;
-}
-
-.process-table td:first-child::before {
-  content: counter(step, decimal-leading-zero);
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.75rem;
-  color: var(--accent2);
-  opacity: 0.8;
+.process-step-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .level {
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--accent2);
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 /* PC表示の視認性向上 */
@@ -575,23 +605,23 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   font-size: 1.2rem;
 }
 
-.process-table th,
-.process-table td {
-  font-size: 1.05rem;
-  padding: 20px 24px;
-}
+@media (max-width: 600px) {
+  .process-stepper::before {
+    left: 19px;
+  }
 
-.process-table tr {
-  height: 60px;
-}
+  .process-step-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 0.75rem;
+  }
 
-.level {
-  font-size: 1.2rem;
-}
+  .process-step-content {
+    padding: 14px 18px;
+  }
 
-@media (min-width: 1024px) {
-  .process-table {
-    font-size: 1.1rem;
+  .process-step-head h3 {
+    font-size: 1rem;
   }
 }
 
@@ -749,6 +779,31 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
   line-height: 1.7;
 }
 
+.project-screenshot {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.project-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-screenshot span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
 .project-tags {
   display: flex;
   gap: 8px;
@@ -874,70 +929,6 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
 
   #process .section-header .section-subtitle {
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .process-table-wrapper {
-    overflow-x: visible;
-  }
-
-  .process-table {
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .process-table thead {
-    display: none;
-  }
-
-  .process-table tbody {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .process-table tr {
-    display: block;
-    background: var(--card);
-    backdrop-filter: var(--blur);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow);
-    height: auto;
-  }
-
-  .process-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.95rem;
-  }
-
-  .process-table td:last-child {
-    border-bottom: none;
-  }
-
-  .process-table td:first-child {
-    display: block;
-    font-size: 1.05rem;
-    padding: 16px 16px 8px 40px;
-  }
-
-  .process-table td:nth-child(2)::before,
-  .process-table td:nth-child(3)::before {
-    content: attr(data-label);
-    flex-shrink: 0;
-    font-weight: 600;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    padding-top: 2px;
-  }
-
-  .process-table td:nth-child(2) {
-    text-align: right;
   }
 }
 
