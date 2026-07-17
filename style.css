@@ -449,28 +449,52 @@ h1, h2, h3, .nav-tab, .btn, .project-tab, .section-eyebrow {
 }
 
 /* ================================
-   スキル
+   スキル（カテゴリ別タグ）
 ================================ */
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+.skill-panel {
+  padding: 32px;
 }
 
-.skill-card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: var(--radius);
-  text-align: center;
+.skill-cat-group {
+  margin-bottom: 26px;
+}
+
+.skill-cat-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-cat-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.skill-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
   font-weight: 600;
-  box-shadow: var(--shadow);
+  color: var(--text);
+  background: var(--bg);
   transition: var(--transition);
+  display: inline-block;
 }
 
-.skill-card:hover {
-  transform: translateY(-6px);
-  background: var(--accent);
-  color: white;
+.skill-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ================================
