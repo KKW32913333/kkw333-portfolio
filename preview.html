@@ -903,12 +903,16 @@ a {
 }
 
 .project-grid.cols-2 {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 720px;
+  gap: 20px;
 }
 
 @media (max-width: 980px) {
-  .project-grid {
+  .project-grid,
+  .project-grid.cols-2 {
     grid-template-columns: 1fr;
+    max-width: none;
   }
 
   .project-grid.cols-1 {
