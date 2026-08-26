@@ -301,6 +301,16 @@ a {
     linear-gradient(160deg, #060b18 0%, #0b1730 45%, #0d1f3d 75%, #0a1730 100%);
 }
 
+@media (max-width: 640px) {
+  .hero {
+    padding: 64px 20px 48px;
+    background:
+      radial-gradient(ellipse 90vw 60vh at 20% 0%, rgba(59, 130, 246, 0.3), transparent 60%),
+      radial-gradient(ellipse 80vw 50vh at 100% 100%, rgba(34, 211, 238, 0.22), transparent 60%),
+      linear-gradient(160deg, #060b18 0%, #0b1730 50%, #0d1f3d 80%, #0a1730 100%);
+  }
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -469,6 +479,12 @@ a {
   .hero-illustration {
     height: 260px;
     order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-illustration {
+    height: 200px;
   }
 }
 
@@ -982,6 +998,10 @@ a {
   font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+.list-body p + p {
+  margin-top: 3px;
 }
 
 .list-body a {
