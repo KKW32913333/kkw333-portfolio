@@ -752,15 +752,54 @@ a {
 /* ================================
    Projects
 ================================ */
+.project-group {
+  margin-bottom: 40px;
+}
+
+.project-group:last-child {
+  margin-bottom: 0;
+}
+
+.project-group-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.project-group-label svg {
+  width: 19px;
+  height: 19px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
+.project-grid.cols-1 {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 560px;
+}
+
+.project-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 @media (max-width: 980px) {
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-grid.cols-1 {
+    max-width: none;
   }
 }
 
@@ -792,6 +831,19 @@ a {
   object-fit: cover;
   object-position: top;
   display: block;
+}
+
+.project-card-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed var(--border);
+}
+
+.project-card-image.placeholder span:first-child {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .project-status-badge {
@@ -1348,69 +1400,81 @@ a {
       <p class="section-subtitle">企画から実装まで一貫して開発しているシステム</p>
     </div>
 
-    <div class="project-grid">
-      <article class="project-card">
-        <div class="project-card-image">
-          <img src="images/linkle.png" alt="Linkleのスケジュール・ToDo・買い物リスト・勤務表の画面" loading="lazy">
-          <span class="project-status-badge">公開中</span>
-        </div>
-        <div class="project-card-body">
-          <h3>Linkle</h3>
-          <p>家族・友人グループで予定・タスク・買い物リスト・勤務表を共有できるWebアプリ。カレンダー管理、買い物・ToDoの共同管理、勤務表のシフト集計、グループチャット・掲示板も搭載。</p>
-          <div class="project-tags">
-            <span class="project-tag">Java 17</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">PWA</span>
+    <div class="project-group">
+      <p class="project-group-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.6 5l-6.4 6.4 2.6 2.6 6.4-6.4a4 4 0 0 0 5-5.6l-2.9 2.9-2.6-2.6 2.9-2.9z"/></svg>
+        日常を便利にするツール
+      </p>
+      <div class="project-grid cols-1">
+        <article class="project-card">
+          <div class="project-card-image">
+            <img src="images/linkle.png" alt="Linkleのスケジュール・ToDo・買い物リスト・勤務表の画面" loading="lazy">
+            <span class="project-status-badge">公開中</span>
           </div>
-          <div class="project-card-actions">
-            <a href="https://schedule-app-827q.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
-            <a href="https://github.com/KKW32913333/Linkle" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <div class="project-card-body">
+            <h3>Linkle</h3>
+            <p>家族・友人グループで予定・タスク・買い物リスト・勤務表を共有できるWebアプリ。カレンダー管理、買い物・ToDoの共同管理、勤務表のシフト集計、グループチャット・掲示板も搭載。</p>
+            <div class="project-tags">
+              <span class="project-tag">Java 17</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">PWA</span>
+            </div>
+            <div class="project-card-actions">
+              <a href="https://schedule-app-827q.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+              <a href="https://github.com/KKW32913333/Linkle" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+    </div>
 
-      <article class="project-card">
-        <div class="project-card-image">
-          <img src="images/shelfy.png" alt="Shelfyのダッシュボード・食品管理・写真一覧・アラート画面" loading="lazy">
-          <span class="project-status-badge">公開中</span>
-        </div>
-        <div class="project-card-body">
-          <h3>Shelfy</h3>
-          <p>棚（Shelf）を起点に、買いすぎ・食品ロス・使い忘れをなくす在庫管理アプリ。賞味期限アラートや写真管理に加え、在庫0で自動的にLinkleの買い物リストに追加される連携機能も搭載。</p>
-          <div class="project-tags">
-            <span class="project-tag">Java 17</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">Cloudflare R2</span>
+    <div class="project-group">
+      <p class="project-group-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="5"/><line x1="7" y1="12.5" x2="7" y2="12.5"/><circle cx="7" cy="10.5" r="0.8" fill="currentColor"/><circle cx="7" cy="14.5" r="0.8" fill="currentColor"/><circle cx="5" cy="12.5" r="0.8" fill="currentColor"/><circle cx="9" cy="12.5" r="0.8" fill="currentColor"/><circle cx="16.5" cy="10.5" r="1.2" fill="currentColor"/><circle cx="16.5" cy="14.5" r="1.2" fill="currentColor"/></svg>
+        ゲーム開発
+      </p>
+      <div class="project-grid cols-2">
+        <article class="project-card">
+          <div class="project-card-image placeholder">
+            <span>🎭 スクリーンショット準備中</span>
+            <span class="project-status-badge">公開中</span>
           </div>
-          <div class="project-card-actions">
-            <a href="https://shelfy-1fi2.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
-            <a href="https://github.com/KKW32913333/shelfy" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <div class="project-card-body">
+            <h3>マスカレード ― 仮面領の一夜 ―</h3>
+            <p>正体を隠したまま王位継承を競う、一夜限りの仮面舞踏会カードゲーム。手札は常に1枚、10種の仮面が繰り出す駆け引きが魅力。CPU対戦（3段階の難易度）とオンライン対戦（合言葉で1対1）に対応。</p>
+            <div class="project-tags">
+              <span class="project-tag">カードゲーム</span>
+              <span class="project-tag">心理戦</span>
+              <span class="project-tag">オンライン対戦</span>
+              <span class="project-tag">PWA対応</span>
+            </div>
+            <div class="project-card-actions">
+              <a href="https://kkw32913333.github.io/masquerade/" class="project-btn primary" target="_blank" rel="noopener noreferrer">プレイする</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project-card">
-        <div class="project-card-image">
-          <img src="images/finterra.png" alt="Finterraのダッシュボード・家計管理・資産管理・固定費画面" loading="lazy">
-          <span class="project-status-badge">公開中</span>
-        </div>
-        <div class="project-card-body">
-          <h3>Finterra</h3>
-          <p>個人・グループ両対応の家計簿・資産管理アプリ。取引の登録・検索、投資信託や株式・預金の資産推移をグラフで可視化。予算超過通知やレシートOCR読み取りにも対応。</p>
-          <div class="project-tags">
-            <span class="project-tag">Java 17</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">OCR</span>
+        <article class="project-card">
+          <div class="project-card-image placeholder">
+            <span>🐉 スクリーンショット準備中</span>
+            <span class="project-status-badge">公開中</span>
           </div>
-          <div class="project-card-actions">
-            <a href="https://finterra.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
-            <a href="https://github.com/KKW32913333/finterra" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <div class="project-card-body">
+            <h3>モンスターマージクエスト</h3>
+            <p>モンスターを合体・進化させて最強の魔王を目指す、ダークファンタジー×溶岩世界の合体パズルゲーム。同じモンスター同士をくっつけるシンプル操作で10段階の進化を目指す。オンラインランキングやデイリーミッションにも対応。</p>
+            <div class="project-tags">
+              <span class="project-tag">パズルゲーム</span>
+              <span class="project-tag">合体・進化</span>
+              <span class="project-tag">ランキング</span>
+              <span class="project-tag">PWA対応</span>
+            </div>
+            <div class="project-card-actions">
+              <a href="https://kkw32913333.github.io/HP_MMQ/" class="project-btn primary" target="_blank" rel="noopener noreferrer">プレイする</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </section>
 
