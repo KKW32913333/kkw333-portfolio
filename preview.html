@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@KKW333 Portfolio</title>
+  <meta name="description" content="System Engineer @KKW333のポートフォリオサイト。IT スキル、開発工程の経験、個人開発プロジェクト（Linkle / Shelfy / Finterra）を紹介しています。">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@KKW333 Portfolio">
+  <meta property="og:description" content="System Engineer @KKW333のポートフォリオサイト。ITスキル、開発工程の経験、個人開発プロジェクトを紹介しています。">
+  <meta property="og:image" content="https://kkw32913333.github.io/kkw333-portfolio/og-image.png">
+  <meta property="og:url" content="https://kkw32913333.github.io/kkw333-portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+/* ================================
+   カラートークン（ライト / ダーク）
+================================ */
+:root {
+  --bg: #f2f6fc;
+  --bg-soft: #e8eef8;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-solid: #ffffff;
+  --text: #0f172a;
+  --text-muted: #5b6478;
+  --accent: #2563eb;
+  --accent2: #0ea5e9;
+  --accent3: #22d3ee;
+  --border: rgba(15, 23, 42, 0.1);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --radius: 18px;
+  --radius-sm: 10px;
+  --transition: 0.3s ease;
+
+  --font-display: "Space Grotesk", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "Space Grotesk", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #0a1220;
+  --bg-soft: #0e1a2e;
+  --card: rgba(30, 41, 59, 0.55);
+  --card-solid: #101a2c;
+  --text: #e6ecf5;
+  --text-muted: #93a0b8;
+  --accent: #3b82f6;
+  --accent2: #38bdf8;
+  --accent3: #22d3ee;
+  --border: rgba(226, 232, 240, 0.12);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ================================
+   リセット
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  padding-top: 64px;
+}
+
+h1, h2, h3, .nav-link, .btn, .section-eyebrow, .logo-text {
+  font-family: var(--font-display);
+}
+
+p, li, td, .card {
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ================================
+   スキップリンク
+================================ */
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 12px;
+  z-index: 3000;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ================================
+   ヘッダー
+================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--card-solid);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  height: 64px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+  box-shadow: 0 0 10px var(--accent2);
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  flex: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-link::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::before {
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent2);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+  border-color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  width: 16px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.mobile-nav-panel {
+  display: none;
+  flex-direction: column;
+  background: var(--card-solid);
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.mobile-nav-panel a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-top: 1px solid var(--border);
+}
+
+.mobile-nav-panel a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent2);
+}
+
+.mobile-nav-panel.open {
+  display: flex;
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ================================
+   HERO
+================================ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 24px 70px;
+  background:
+    radial-gradient(ellipse 700px 500px at 15% 10%, rgba(59, 130, 246, 0.35), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 90% 30%, rgba(34, 211, 238, 0.25), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 50% 110%, rgba(37, 99, 235, 0.3), transparent 60%),
+    linear-gradient(160deg, #060b18 0%, #0b1730 45%, #0d1f3d 75%, #0a1730 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,0.4) 50%, transparent 100%),
+    radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.45) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.35) 50%, transparent 100%),
+    radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.4) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 10% 65%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 600;
+  margin-top: 6px;
+  background: linear-gradient(90deg, #60a5fa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text {
+  margin-top: 22px;
+  font-size: clamp(0.92rem, 2vw, 1.02rem);
+  line-height: 1.9;
+  color: #b9c6e0;
+  max-width: 480px;
+}
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: var(--transition);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: linear-gradient(120deg, var(--accent), var(--accent3));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+}
+
+.ghost-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #fff;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  animation: bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+}
+
+/* Hero illustration */
+.hero-illustration {
+  position: relative;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+.float-badge {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.float-badge.delay1 { animation-delay: 0.6s; }
+.float-badge.delay2 { animation-delay: 1.2s; }
+.float-badge.delay3 { animation-delay: 1.8s; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-illustration {
+    height: 260px;
+    order: -1;
+  }
+}
+
+/* ================================
+   セクション共通
+================================ */
+.section {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent2);
+}
+
+.section-header {
+  margin-bottom: 36px;
+}
+
+.section-header h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-header h2::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent2);
+  box-shadow: 0 0 8px var(--accent2);
+}
+
+.section-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* ================================
+   About
+================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.about-grid .card p {
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.about-grid .card p:last-child {
+  margin-bottom: 0;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.tech-badge svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================
+   Skills + Process（2カラム）
+================================ */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-cat-group {
+  margin-bottom: 24px;
+}
+
+.skill-cat-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-cat-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.skill-cat-label svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.skill-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  padding: 7px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg-soft);
+  transition: var(--transition);
+}
+
+.skill-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Process table */
+.process-table-wrapper {
+  overflow-x: auto;
+}
+
+.process-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.process-table th {
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 14px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.process-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.process-table tr:last-child td {
+  border-bottom: none;
+}
+
+.process-row-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  white-space: nowrap;
+}
+
+.process-row-name svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.process-table td.process-desc {
+  color: var(--text-muted);
+}
+
+.level {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent2);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .process-table thead {
+    display: none;
+  }
+
+  .process-table, .process-table tbody, .process-table tr, .process-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .process-table tr {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .process-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .process-table td {
+    border-bottom: none;
+    padding: 4px 0;
+  }
+
+  .process-table td.process-desc,
+  .process-table td:last-child {
+    padding-left: 27px;
+  }
+}
+
+/* ================================
+   Projects
+================================ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 980px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-soft);
+  position: relative;
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.project-status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.9);
+  color: #fff;
+}
+
+.project-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.project-card-body p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.project-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.project-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.project-btn.primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent3));
+  color: #fff;
+}
+
+.project-btn.primary:hover {
+  opacity: 0.9;
+}
+
+.project-btn.ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.project-btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ================================
+   下段（取得資格 / 趣味 / 連絡先）
+================================ */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 980px) {
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mini-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mini-section-title svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+
+.list-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.list-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.list-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.list-icon svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+}
+
+.list-body h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.list-body p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.list-body a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.list-body a:hover {
+  color: var(--accent);
+}
+
+/* ================================
+   フッター
+================================ */
+.site-footer {
+  text-align: center;
+  padding: 32px 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--card-solid);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: var(--transition);
+  z-index: 900;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ================================
+   スクロールフェードイン
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
+   レスポンシブ調整
+================================ */
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .list-body a,
+  .card a {
+    word-break: break-all;
+  }
+}
+
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a href="#top" class="skip-link">本文へスキップ</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo-link">
+      <span class="logo-dot"></span>
+      <span class="logo-text">@KKW333</span>
+    </a>
+
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="#about" class="nav-link">自己紹介</a>
+      <a href="#skills" class="nav-link">ITスキル</a>
+      <a href="#process" class="nav-link">開発工程</a>
+      <a href="#projects" class="nav-link">個人開発</a>
+      <a href="#licenses-it" class="nav-link">取得資格</a>
+      <a href="#hobby" class="nav-link">趣味・特技</a>
+      <a href="#contact" class="nav-link">連絡先</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeBtn" class="theme-toggle" aria-label="テーマ切り替え">
+        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="モバイルナビゲーション">
+    <a href="#about">自己紹介</a>
+    <a href="#skills">ITスキル</a>
+    <a href="#process">開発工程</a>
+    <a href="#projects">個人開発</a>
+    <a href="#licenses-it">取得資格</a>
+    <a href="#hobby">趣味・特技</a>
+    <a href="#contact">連絡先</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Portfolio</p>
+        <h1 class="hero-title">@KKW333</h1>
+        <p class="hero-subtitle">System Engineer</p>
+        <p class="hero-text">
+          ITエンジニア歴：5年目。<br>
+          Web・ソフトウェア開発を継続的に学習しています。
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn primary-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+            Profile
+          </a>
+          <a href="#contact" class="btn ghost-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-illustration" aria-hidden="true">
+        <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg">
+          <rect x="90" y="230" width="280" height="150" rx="14" fill="#0f1c33" stroke="#2563eb" stroke-opacity="0.5"/>
+          <rect x="110" y="248" width="240" height="115" rx="6" fill="#0a1424"/>
+          <rect x="126" y="264" width="60" height="6" rx="3" fill="#38bdf8"/>
+          <rect x="126" y="278" width="100" height="6" rx="3" fill="#3b82f6" opacity="0.7"/>
+          <rect x="126" y="292" width="80" height="6" rx="3" fill="#22d3ee" opacity="0.6"/>
+          <rect x="126" y="306" width="120" height="6" rx="3" fill="#3b82f6" opacity="0.5"/>
+          <rect x="126" y="320" width="70" height="6" rx="3" fill="#38bdf8" opacity="0.6"/>
+          <rect x="126" y="334" width="90" height="6" rx="3" fill="#22d3ee" opacity="0.4"/>
+          <path d="M70 380 L390 380 L412 402 L48 402 Z" fill="#0d1b30"/>
+
+          <g class="float-badge">
+            <rect x="14" y="40" width="76" height="62" rx="14" fill="#0f1c33" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="52" y="80" font-family="monospace" font-size="24" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
+          </g>
+          <g class="float-badge delay1">
+            <rect x="332" y="18" width="76" height="62" rx="14" fill="#0f1c33" stroke="#22d3ee" stroke-width="1.5"/>
+            <text x="370" y="58" font-family="monospace" font-size="24" fill="#22d3ee" text-anchor="middle">{ }</text>
+          </g>
+          <g class="float-badge delay2">
+            <rect x="6" y="150" width="62" height="58" rx="14" fill="#0f1c33" stroke="#3b82f6" stroke-width="1.5"/>
+            <ellipse cx="37" cy="169" rx="15" ry="5.5" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
+            <path d="M22 169v15c0 3 6.5 5.5 15 5.5s15-2.5 15-5.5v-15" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
+          </g>
+          <g class="float-badge delay3">
+            <rect x="362" y="150" width="76" height="62" rx="14" fill="#0f1c33" stroke="#60a5fa" stroke-width="1.5"/>
+            <polyline points="378,192 392,175 403,183 422,158" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <a href="#about" class="hero-scroll-indicator" aria-label="下にスクロール">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </section>
+
+  <section id="about" class="section reveal" aria-labelledby="about-title">
+    <div class="section-header">
+      <p class="section-eyebrow">About</p>
+      <h2 id="about-title">自己紹介</h2>
+      <p class="section-subtitle">学び続けるエンジニアとして</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="card">
+        <p>IT分野に強い関心を持ち、JavaやPythonを中心にプログラミングやWeb技術を学習しています。</p>
+        <p>AI技術も活用しながら、実践的なスキルの習得と継続的な成長を目指しています。</p>
+      </div>
+
+      <div class="card">
+        <div class="tech-grid">
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17"/><line x1="7" y1="3" x2="7" y2="5"/><line x1="10" y1="2.5" x2="10" y2="5"/></svg>
+            Java
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><polyline points="7 9 10 12 7 15"/><line x1="12" y1="15" x2="17" y2="15"/></svg>
+            Python
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 0-3 1-3 3v3c0 1-1 2-2 2 1 0 2 1 2 2v3c0 2 1 3 3 3"/><path d="M16 4c2 0 3 1 3 3v3c0 1 1 2 2 2-1 0-2 1-2 2v3c0 2-1 3-3 3"/></svg>
+            JavaScript
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z"/><path d="M19 15l.9 2.2L22 18l-2.1.8L19 21l-.9-2.2L16 18l2.1-.8L19 15z"/></svg>
+            AI
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg>
+            Web
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            Database
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" aria-labelledby="skills-process-title">
+    <div class="two-col-grid">
+      <div id="skills">
+        <div class="section-header">
+          <p class="section-eyebrow">Skills</p>
+          <h2 id="skills-title">ITスキル</h2>
+          <p class="section-subtitle">経験のある言語・ツール</p>
+        </div>
+
+        <div class="card">
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+              プログラミング言語
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">COBOL</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg>
+              フロントエンド
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+              データベース
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.6 5l-6.4 6.4 2.6 2.6 6.4-6.4a4 4 0 0 0 5-5.6l-2.9 2.9-2.6-2.6 2.9-2.9z"/></svg>
+              開発ツール（ローコード）
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">WebPerFormer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="process">
+        <div class="section-header">
+          <p class="section-eyebrow">Process</p>
+          <h2 id="process-title">経験のある開発工程</h2>
+          <p class="section-subtitle">担当した工程と経験レベル</p>
+        </div>
+
+        <div class="card">
+          <div class="process-table-wrapper">
+            <table class="process-table">
+              <thead>
+                <tr>
+                  <th>工程</th>
+                  <th>内容</th>
+                  <th>経験度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><line x1="8.5" y1="10" x2="15.5" y2="10"/><line x1="8.5" y1="13.5" x2="15.5" y2="13.5"/></svg>
+                      要件定義
+                    </span>
+                  </td>
+                  <td class="process-desc">顧客ヒアリング、要件定義書作成等</td>
+                  <td><span class="level level-3">★★★☆☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg>
+                      基本設計
+                    </span>
+                  </td>
+                  <td class="process-desc">画面設計、機能設計、ジョブネット設計</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg>
+                      詳細設計
+                    </span>
+                  </td>
+                  <td class="process-desc">クラス設計、DBテーブル設計等</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+                      製造
+                    </span>
+                  </td>
+                  <td class="process-desc">Javaやローコードツールを用いた開発</td>
+                  <td><span class="level level-5">★★★★★</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                      単体試験
+                    </span>
+                  </td>
+                  <td class="process-desc">テストケース作成、試験実施、品質確認</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                      結合・総合試験
+                    </span>
+                  </td>
+                  <td class="process-desc">連携動作確認、障害調査、改修対応</td>
+                  <td><span class="level level-3">★★★☆☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 1.5 5 5 5 9 0 2-0.5 3.5-1 4.5l-4-1-4 1c-0.5-1-1-2.5-1-4.5 0-4 2-7.5 5-9z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 15.5l-2 3.5 3.5-1.5"/><path d="M15 15.5l2 3.5-3.5-1.5"/></svg>
+                      本番リリース作業
+                    </span>
+                  </td>
+                  <td class="process-desc">リリース準備、品質評価、本番確認</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section reveal" aria-labelledby="projects-title">
+    <div class="section-header">
+      <p class="section-eyebrow">Personal Projects</p>
+      <h2 id="projects-title">個人開発プロジェクト</h2>
+      <p class="section-subtitle">企画から実装まで一貫して開発しているシステム</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-card-image">
+          <img src="images/linkle.png" alt="Linkleのスケジュール・ToDo・買い物リスト・勤務表の画面" loading="lazy">
+          <span class="project-status-badge">公開中</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Linkle</h3>
+          <p>家族・友人グループで予定・タスク・買い物リスト・勤務表を共有できるWebアプリ。カレンダー管理、買い物・ToDoの共同管理、勤務表のシフト集計、グループチャット・掲示板も搭載。</p>
+          <div class="project-tags">
+            <span class="project-tag">Java 17</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">PWA</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://schedule-app-827q.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a href="https://github.com/KKW32913333/Linkle" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-image">
+          <img src="images/shelfy.png" alt="Shelfyのダッシュボード・食品管理・写真一覧・アラート画面" loading="lazy">
+          <span class="project-status-badge">公開中</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Shelfy</h3>
+          <p>棚（Shelf）を起点に、買いすぎ・食品ロス・使い忘れをなくす在庫管理アプリ。賞味期限アラートや写真管理に加え、在庫0で自動的にLinkleの買い物リストに追加される連携機能も搭載。</p>
+          <div class="project-tags">
+            <span class="project-tag">Java 17</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Cloudflare R2</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://shelfy-1fi2.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a href="https://github.com/KKW32913333/shelfy" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-image">
+          <img src="images/finterra.png" alt="Finterraのダッシュボード・家計管理・資産管理・固定費画面" loading="lazy">
+          <span class="project-status-badge">公開中</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Finterra</h3>
+          <p>個人・グループ両対応の家計簿・資産管理アプリ。取引の登録・検索、投資信託や株式・預金の資産推移をグラフで可視化。予算超過通知やレシートOCR読み取りにも対応。</p>
+          <div class="project-tags">
+            <span class="project-tag">Java 17</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">OCR</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://finterra.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a href="https://github.com/KKW32913333/finterra" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" aria-label="取得資格・趣味・連絡先">
+    <div class="bottom-grid">
+      <div id="licenses-it">
+        <div class="section-header">
+          <p class="section-eyebrow">Licenses</p>
+          <h2 id="licenses-it-title">取得資格</h2>
+          <p class="section-subtitle">学習の軌跡</p>
+        </div>
+        <div class="card">
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Microsoft Office Specialist（Excel・Word）</h4>
+              <p>Officeツールの基礎〜応用操作を体系的に習得。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Python3エンジニア認定基礎試験</h4>
+              <p>Pythonの基本文法・標準ライブラリの理解。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>情報セキュリティマネジメント試験</h4>
+              <p>情報セキュリティの基礎理論と実務知識。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>基本情報技術者試験</h4>
+              <p>IT全般の基礎知識とアルゴリズム・設計の理解。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>第二種電気工事士</h4>
+              <p>電気設備工事に必要な基礎技能と知識。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hobby">
+        <div class="section-header">
+          <p class="section-eyebrow">Hobby</p>
+          <h2 id="hobby-title">趣味・特技</h2>
+          <p class="section-subtitle">インプットとリフレッシュ</p>
+        </div>
+        <div class="card">
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-0.8 0-1.5-0.7-1.5-1.5v-13z"/><path d="M20 5.5C20 4.7 19.3 4 18.5 4H12v16h6.5c0.8 0 1.5-0.7 1.5-1.5v-13z"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>読書（ミステリー小説ベスト3）</h4>
+              <p>1位 硝子の塔の殺人（知念実希人）／ 2位 十角館の殺人（綾辻行人）／ 3位 兇人邸の殺人（今村昌弘）</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4.1h-4.4L8.5 9.5z"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>サッカー観戦（好きな選手ベスト3）</h4>
+              <p>1位 フヴィチャ・クヴァラツヘリア ／ 2位 パウロ・マルディーニ ／ 3位 アンドレア・ピルロ</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>映画鑑賞（歴代ベスト3）</h4>
+              <p>1位 ロード・オブ・ザ・リング ／ 2位 ハリー・ポッター ／ 3位 ナイブズ・アウト</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 8 12 10 6 14 18 16 12 21 12"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>ソフトテニス</h4>
+              <p>中学〜高校の6年間、部活動に所属。ダブルスでは前衛を担当。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact">
+        <div class="section-header">
+          <p class="section-eyebrow">Get in touch</p>
+          <h2 id="contact-title">連絡先</h2>
+          <p class="section-subtitle">ご連絡・リンク</p>
+        </div>
+        <div class="card">
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Email</h4>
+              <p><a href="mailto:kouta2000.3.3.369@icloud.com">kouta2000.3.3.369@icloud.com</a></p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.9 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7 1 .7 2v3c0 .3.2.6.7.5 4-1.4 6.9-5.2 6.9-9.7C22 6.6 17.5 2 12 2z"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>GitHub</h4>
+              <p><a href="https://github.com/KKW32913333/kkw333-portfolio" target="_blank" rel="noopener noreferrer">github.com/KKW32913333</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 @KKW333</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="ページの先頭へ戻る">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>
+</button>
+
+<script>
+// ===============================
+// テーマ切り替え（ライト / ダーク）
+// ===============================
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeBtn");
+  const sunIcon = document.getElementById("themeIconSun");
+  const moonIcon = document.getElementById("themeIconMoon");
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      root.setAttribute("data-theme", "dark");
+      sunIcon.style.display = "none";
+      moonIcon.style.display = "block";
+    } else {
+      root.removeAttribute("data-theme");
+      sunIcon.style.display = "block";
+      moonIcon.style.display = "none";
+    }
+  }
+
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    applyTheme(saved);
+  } else {
+    applyTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+
+  btn.addEventListener("click", () => {
+    const isDark = root.getAttribute("data-theme") === "dark";
+    const next = isDark ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem("theme", next);
+  });
+})();
+
+
+// ===============================
+// スクロールアニメーション（フェードイン）
+// ===============================
+(function () {
+  const reveals = document.querySelectorAll(".reveal");
+
+  function reveal() {
+    const trigger = window.innerHeight * 0.85;
+    reveals.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) el.classList.add("visible");
+    });
+  }
+
+  window.addEventListener("scroll", reveal);
+  window.addEventListener("load", reveal);
+})();
+
+
+// ===============================
+// モバイルメニュー
+// ===============================
+const menuToggle = document.getElementById("menuToggle");
+const mobileNavPanel = document.getElementById("mobileNavPanel");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mobileNavPanel.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  menuToggle.classList.toggle("active", isOpen);
+});
+
+document.querySelectorAll(".mobile-nav-panel a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileNavPanel.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.classList.remove("active");
+  });
+});
+
+
+// ===============================
+// スクロール連動：現在地のナビをハイライト
+// ===============================
+(function () {
+  const sections = document.querySelectorAll("main [id]");
+  const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-panel a");
+
+  if (!sections.length || !navLinks.length) return;
+
+  const hrefFor = (id) => (id === "hero" ? "#top" : `#${id}`);
+
+  const setActive = (id) => {
+    const target = hrefFor(id);
+    navLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === target);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+})();
+
+
+// ===============================
+// トップへ戻るボタン
+// ===============================
+(function () {
+  const backToTop = document.getElementById("backToTop");
+  if (!backToTop) return;
+
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("show", window.scrollY > 500);
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+
+</script>
+</body>
+</html>

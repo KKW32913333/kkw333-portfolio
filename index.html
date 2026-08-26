@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@KKW333 Portfolio</title>
+  <meta name="description" content="System Engineer @KKW333のポートフォリオサイト。IT スキル、開発工程の経験、個人開発プロジェクト（Linkle / Shelfy / Finterra）を紹介しています。">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@KKW333 Portfolio">
+  <meta property="og:description" content="System Engineer @KKW333のポートフォリオサイト。ITスキル、開発工程の経験、個人開発プロジェクトを紹介しています。">
+  <meta property="og:image" content="https://kkw32913333.github.io/kkw333-portfolio/og-image.png">
+  <meta property="og:url" content="https://kkw32913333.github.io/kkw333-portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a href="#top" class="skip-link">本文へスキップ</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo-link">
+      <span class="logo-dot"></span>
+      <span class="logo-text">@KKW333</span>
+    </a>
+
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="#about" class="nav-link">自己紹介</a>
+      <a href="#skills" class="nav-link">ITスキル</a>
+      <a href="#process" class="nav-link">開発工程</a>
+      <a href="#projects" class="nav-link">個人開発</a>
+      <a href="#licenses-it" class="nav-link">取得資格</a>
+      <a href="#hobby" class="nav-link">趣味・特技</a>
+      <a href="#contact" class="nav-link">連絡先</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeBtn" class="theme-toggle" aria-label="テーマ切り替え">
+        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="モバイルナビゲーション">
+    <a href="#about">自己紹介</a>
+    <a href="#skills">ITスキル</a>
+    <a href="#process">開発工程</a>
+    <a href="#projects">個人開発</a>
+    <a href="#licenses-it">取得資格</a>
+    <a href="#hobby">趣味・特技</a>
+    <a href="#contact">連絡先</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Portfolio</p>
+        <h1 class="hero-title">@KKW333</h1>
+        <p class="hero-subtitle">System Engineer</p>
+        <p class="hero-text">
+          ITエンジニア歴：5年目。<br>
+          Web・ソフトウェア開発を継続的に学習しています。
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn primary-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+            Profile
+          </a>
+          <a href="#contact" class="btn ghost-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-illustration" aria-hidden="true">
+        <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg">
+          <rect x="90" y="230" width="280" height="150" rx="14" fill="#0f1c33" stroke="#2563eb" stroke-opacity="0.5"/>
+          <rect x="110" y="248" width="240" height="115" rx="6" fill="#0a1424"/>
+          <rect x="126" y="264" width="60" height="6" rx="3" fill="#38bdf8"/>
+          <rect x="126" y="278" width="100" height="6" rx="3" fill="#3b82f6" opacity="0.7"/>
+          <rect x="126" y="292" width="80" height="6" rx="3" fill="#22d3ee" opacity="0.6"/>
+          <rect x="126" y="306" width="120" height="6" rx="3" fill="#3b82f6" opacity="0.5"/>
+          <rect x="126" y="320" width="70" height="6" rx="3" fill="#38bdf8" opacity="0.6"/>
+          <rect x="126" y="334" width="90" height="6" rx="3" fill="#22d3ee" opacity="0.4"/>
+          <path d="M70 380 L390 380 L412 402 L48 402 Z" fill="#0d1b30"/>
+
+          <g class="float-badge">
+            <rect x="14" y="40" width="76" height="62" rx="14" fill="#0f1c33" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="52" y="80" font-family="monospace" font-size="24" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
+          </g>
+          <g class="float-badge delay1">
+            <rect x="332" y="18" width="76" height="62" rx="14" fill="#0f1c33" stroke="#22d3ee" stroke-width="1.5"/>
+            <text x="370" y="58" font-family="monospace" font-size="24" fill="#22d3ee" text-anchor="middle">{ }</text>
+          </g>
+          <g class="float-badge delay2">
+            <rect x="6" y="150" width="62" height="58" rx="14" fill="#0f1c33" stroke="#3b82f6" stroke-width="1.5"/>
+            <ellipse cx="37" cy="169" rx="15" ry="5.5" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
+            <path d="M22 169v15c0 3 6.5 5.5 15 5.5s15-2.5 15-5.5v-15" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
+          </g>
+          <g class="float-badge delay3">
+            <rect x="362" y="150" width="76" height="62" rx="14" fill="#0f1c33" stroke="#60a5fa" stroke-width="1.5"/>
+            <polyline points="378,192 392,175 403,183 422,158" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <a href="#about" class="hero-scroll-indicator" aria-label="下にスクロール">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </section>
+
+  <section id="about" class="section reveal" aria-labelledby="about-title">
+    <div class="section-header">
+      <p class="section-eyebrow">About</p>
+      <h2 id="about-title">自己紹介</h2>
+      <p class="section-subtitle">学び続けるエンジニアとして</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="card">
+        <p>IT分野に強い関心を持ち、JavaやPythonを中心にプログラミングやWeb技術を学習しています。</p>
+        <p>AI技術も活用しながら、実践的なスキルの習得と継続的な成長を目指しています。</p>
+      </div>
+
+      <div class="card">
+        <div class="tech-grid">
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17"/><line x1="7" y1="3" x2="7" y2="5"/><line x1="10" y1="2.5" x2="10" y2="5"/></svg>
+            Java
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><polyline points="7 9 10 12 7 15"/><line x1="12" y1="15" x2="17" y2="15"/></svg>
+            Python
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 0-3 1-3 3v3c0 1-1 2-2 2 1 0 2 1 2 2v3c0 2 1 3 3 3"/><path d="M16 4c2 0 3 1 3 3v3c0 1 1 2 2 2-1 0-2 1-2 2v3c0 2-1 3-3 3"/></svg>
+            JavaScript
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z"/><path d="M19 15l.9 2.2L22 18l-2.1.8L19 21l-.9-2.2L16 18l2.1-.8L19 15z"/></svg>
+            AI
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg>
+            Web
+          </div>
+          <div class="tech-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            Database
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" aria-labelledby="skills-process-title">
+    <div class="two-col-grid">
+      <div id="skills">
+        <div class="section-header">
+          <p class="section-eyebrow">Skills</p>
+          <h2 id="skills-title">ITスキル</h2>
+          <p class="section-subtitle">経験のある言語・ツール</p>
+        </div>
+
+        <div class="card">
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+              プログラミング言語
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">COBOL</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg>
+              フロントエンド
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+              データベース
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-group">
+            <p class="skill-cat-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.6 5l-6.4 6.4 2.6 2.6 6.4-6.4a4 4 0 0 0 5-5.6l-2.9 2.9-2.6-2.6 2.9-2.9z"/></svg>
+              開発ツール（ローコード）
+            </p>
+            <div class="skill-tag-row">
+              <span class="skill-tag">WebPerFormer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="process">
+        <div class="section-header">
+          <p class="section-eyebrow">Process</p>
+          <h2 id="process-title">経験のある開発工程</h2>
+          <p class="section-subtitle">担当した工程と経験レベル</p>
+        </div>
+
+        <div class="card">
+          <div class="process-table-wrapper">
+            <table class="process-table">
+              <thead>
+                <tr>
+                  <th>工程</th>
+                  <th>内容</th>
+                  <th>経験度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><line x1="8.5" y1="10" x2="15.5" y2="10"/><line x1="8.5" y1="13.5" x2="15.5" y2="13.5"/></svg>
+                      要件定義
+                    </span>
+                  </td>
+                  <td class="process-desc">顧客ヒアリング、要件定義書作成等</td>
+                  <td><span class="level level-3">★★★☆☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg>
+                      基本設計
+                    </span>
+                  </td>
+                  <td class="process-desc">画面設計、機能設計、ジョブネット設計</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg>
+                      詳細設計
+                    </span>
+                  </td>
+                  <td class="process-desc">クラス設計、DBテーブル設計等</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+                      製造
+                    </span>
+                  </td>
+                  <td class="process-desc">Javaやローコードツールを用いた開発</td>
+                  <td><span class="level level-5">★★★★★</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                      単体試験
+                    </span>
+                  </td>
+                  <td class="process-desc">テストケース作成、試験実施、品質確認</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                      結合・総合試験
+                    </span>
+                  </td>
+                  <td class="process-desc">連携動作確認、障害調査、改修対応</td>
+                  <td><span class="level level-3">★★★☆☆</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="process-row-name">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 1.5 5 5 5 9 0 2-0.5 3.5-1 4.5l-4-1-4 1c-0.5-1-1-2.5-1-4.5 0-4 2-7.5 5-9z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 15.5l-2 3.5 3.5-1.5"/><path d="M15 15.5l2 3.5-3.5-1.5"/></svg>
+                      本番リリース作業
+                    </span>
+                  </td>
+                  <td class="process-desc">リリース準備、品質評価、本番確認</td>
+                  <td><span class="level level-4">★★★★☆</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section reveal" aria-labelledby="projects-title">
+    <div class="section-header">
+      <p class="section-eyebrow">Personal Projects</p>
+      <h2 id="projects-title">個人開発プロジェクト</h2>
+      <p class="section-subtitle">企画から実装まで一貫して開発しているシステム</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-card-image">
+          <img src="images/linkle.png" alt="Linkleのスケジュール・ToDo・買い物リスト・勤務表の画面" loading="lazy">
+          <span class="project-status-badge">公開中</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Linkle</h3>
+          <p>家族・友人グループで予定・タスク・買い物リスト・勤務表を共有できるWebアプリ。カレンダー管理、買い物・ToDoの共同管理、勤務表のシフト集計、グループチャット・掲示板も搭載。</p>
+          <div class="project-tags">
+            <span class="project-tag">Java 17</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">PWA</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://schedule-app-827q.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a href="https://github.com/KKW32913333/Linkle" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-image">
+          <img src="images/shelfy.png" alt="Shelfyのダッシュボード・食品管理・写真一覧・アラート画面" loading="lazy">
+          <span class="project-status-badge">公開中</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Shelfy</h3>
+          <p>棚（Shelf）を起点に、買いすぎ・食品ロス・使い忘れをなくす在庫管理アプリ。賞味期限アラートや写真管理に加え、在庫0で自動的にLinkleの買い物リストに追加される連携機能も搭載。</p>
+          <div class="project-tags">
+            <span class="project-tag">Java 17</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Cloudflare R2</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://shelfy-1fi2.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a href="https://github.com/KKW32913333/shelfy" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-image">
+          <img src="images/finterra.png" alt="Finterraのダッシュボード・家計管理・資産管理・固定費画面" loading="lazy">
+          <span class="project-status-badge">公開中</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Finterra</h3>
+          <p>個人・グループ両対応の家計簿・資産管理アプリ。取引の登録・検索、投資信託や株式・預金の資産推移をグラフで可視化。予算超過通知やレシートOCR読み取りにも対応。</p>
+          <div class="project-tags">
+            <span class="project-tag">Java 17</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">OCR</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://finterra.onrender.com" class="project-btn primary" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a href="https://github.com/KKW32913333/finterra" class="project-btn ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" aria-label="取得資格・趣味・連絡先">
+    <div class="bottom-grid">
+      <div id="licenses-it">
+        <div class="section-header">
+          <p class="section-eyebrow">Licenses</p>
+          <h2 id="licenses-it-title">取得資格</h2>
+          <p class="section-subtitle">学習の軌跡</p>
+        </div>
+        <div class="card">
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Microsoft Office Specialist（Excel・Word）</h4>
+              <p>Officeツールの基礎〜応用操作を体系的に習得。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Python3エンジニア認定基礎試験</h4>
+              <p>Pythonの基本文法・標準ライブラリの理解。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>情報セキュリティマネジメント試験</h4>
+              <p>情報セキュリティの基礎理論と実務知識。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>基本情報技術者試験</h4>
+              <p>IT全般の基礎知識とアルゴリズム・設計の理解。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4l3 4 3-4"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>第二種電気工事士</h4>
+              <p>電気設備工事に必要な基礎技能と知識。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hobby">
+        <div class="section-header">
+          <p class="section-eyebrow">Hobby</p>
+          <h2 id="hobby-title">趣味・特技</h2>
+          <p class="section-subtitle">インプットとリフレッシュ</p>
+        </div>
+        <div class="card">
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-0.8 0-1.5-0.7-1.5-1.5v-13z"/><path d="M20 5.5C20 4.7 19.3 4 18.5 4H12v16h6.5c0.8 0 1.5-0.7 1.5-1.5v-13z"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>読書（ミステリー小説ベスト3）</h4>
+              <p>1位 硝子の塔の殺人（知念実希人）／ 2位 十角館の殺人（綾辻行人）／ 3位 兇人邸の殺人（今村昌弘）</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4.1h-4.4L8.5 9.5z"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>サッカー観戦（好きな選手ベスト3）</h4>
+              <p>1位 フヴィチャ・クヴァラツヘリア ／ 2位 パウロ・マルディーニ ／ 3位 アンドレア・ピルロ</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>映画鑑賞（歴代ベスト3）</h4>
+              <p>1位 ロード・オブ・ザ・リング ／ 2位 ハリー・ポッター ／ 3位 ナイブズ・アウト</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 8 12 10 6 14 18 16 12 21 12"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>ソフトテニス</h4>
+              <p>中学〜高校の6年間、部活動に所属。ダブルスでは前衛を担当。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact">
+        <div class="section-header">
+          <p class="section-eyebrow">Get in touch</p>
+          <h2 id="contact-title">連絡先</h2>
+          <p class="section-subtitle">ご連絡・リンク</p>
+        </div>
+        <div class="card">
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Email</h4>
+              <p><a href="mailto:kouta2000.3.3.369@icloud.com">kouta2000.3.3.369@icloud.com</a></p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.9 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7 1 .7 2v3c0 .3.2.6.7.5 4-1.4 6.9-5.2 6.9-9.7C22 6.6 17.5 2 12 2z"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>GitHub</h4>
+              <p><a href="https://github.com/KKW32913333/kkw333-portfolio" target="_blank" rel="noopener noreferrer">github.com/KKW32913333</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 @KKW333</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="ページの先頭へ戻る">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>
+</button>
+
+<script src="script.js?v=3"></script>
+</body>
+</html>
