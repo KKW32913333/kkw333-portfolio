@@ -223,20 +223,35 @@ a {
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: 999px;
-  width: 38px;
-  height: 38px;
-  font-size: 1rem;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-display);
   cursor: pointer;
   color: var(--text);
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 7px;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.08);
   border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 420px) {
+  .theme-toggle {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
 }
 
 .menu-toggle {
@@ -316,6 +331,14 @@ a {
   overflow: hidden;
   padding: 90px 24px 70px;
   background:
+    radial-gradient(ellipse 700px 500px at 15% 10%, rgba(59, 130, 246, 0.16), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 90% 30%, rgba(34, 211, 238, 0.14), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 50% 110%, rgba(37, 99, 235, 0.12), transparent 60%),
+    linear-gradient(160deg, #eef3fc 0%, #e7edfa 50%, #eaf2fb 100%);
+}
+
+[data-theme="dark"] .hero {
+  background:
     radial-gradient(ellipse 700px 500px at 15% 10%, rgba(59, 130, 246, 0.35), transparent 60%),
     radial-gradient(ellipse 600px 500px at 90% 30%, rgba(34, 211, 238, 0.25), transparent 60%),
     radial-gradient(ellipse 900px 700px at 50% 110%, rgba(37, 99, 235, 0.3), transparent 60%),
@@ -325,6 +348,13 @@ a {
 @media (max-width: 640px) {
   .hero {
     padding: 64px 20px 48px;
+    background:
+      radial-gradient(ellipse 90vw 60vh at 20% 0%, rgba(59, 130, 246, 0.14), transparent 60%),
+      radial-gradient(ellipse 80vw 50vh at 100% 100%, rgba(34, 211, 238, 0.12), transparent 60%),
+      linear-gradient(160deg, #eef3fc 0%, #e7edfa 50%, #eaf2fb 100%);
+  }
+
+  [data-theme="dark"] .hero {
     background:
       radial-gradient(ellipse 90vw 60vh at 20% 0%, rgba(59, 130, 246, 0.3), transparent 60%),
       radial-gradient(ellipse 80vw 50vh at 100% 100%, rgba(34, 211, 238, 0.22), transparent 60%),
@@ -344,6 +374,11 @@ a {
     radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.4) 50%, transparent 100%),
     radial-gradient(1.5px 1.5px at 10% 65%, rgba(255,255,255,0.3) 50%, transparent 100%);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="dark"] .hero::before {
   opacity: 0.8;
 }
 
@@ -351,6 +386,12 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="dark"] .hero-stars {
+  opacity: 1;
 }
 
 .hero-stars span {
@@ -371,7 +412,7 @@ a {
 .hero-cursor {
   display: inline-block;
   animation: blink-cursor 1.1s step-end infinite;
-  color: var(--accent3);
+  color: var(--accent2);
 }
 
 @keyframes blink-cursor {
@@ -394,16 +435,20 @@ a {
   font-size: 0.8rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: #93c5fd;
+  color: var(--accent);
   margin-bottom: 18px;
   font-weight: 600;
+}
+
+[data-theme="dark"] .hero-eyebrow {
+  color: #93c5fd;
 }
 
 .hero-title {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 6vw, 4.6rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
@@ -413,7 +458,7 @@ a {
   font-size: clamp(1.3rem, 3vw, 1.9rem);
   font-weight: 600;
   margin-top: 6px;
-  background: linear-gradient(90deg, #60a5fa, #22d3ee);
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -423,8 +468,12 @@ a {
   margin-top: 22px;
   font-size: clamp(0.92rem, 2vw, 1.02rem);
   line-height: 1.9;
-  color: #b9c6e0;
+  color: var(--text-muted);
   max-width: 480px;
+}
+
+[data-theme="dark"] .hero-text {
+  color: #b9c6e0;
 }
 
 .hero-actions {
@@ -478,12 +527,23 @@ a {
 }
 
 .ghost-btn {
+  background: var(--card-solid);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.ghost-btn:hover {
+  background: var(--bg-soft);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .ghost-btn {
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-.ghost-btn:hover {
+[data-theme="dark"] .ghost-btn:hover {
   background: rgba(255, 255, 255, 0.14);
   border-color: #fff;
 }
@@ -493,8 +553,23 @@ a {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   animation: bounce 2.2s ease-in-out infinite;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-solid);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .hero-scroll-indicator {
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 @keyframes bounce {
@@ -505,7 +580,7 @@ a {
 /* Hero illustration */
 .hero-illustration {
   position: relative;
-  height: 340px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -515,7 +590,28 @@ a {
   width: 100%;
   max-width: 460px;
   height: auto;
+  filter: drop-shadow(0 20px 40px rgba(15, 23, 42, 0.18));
+}
+
+[data-theme="dark"] .hero-illustration svg {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+.hero-badge-box {
+  fill: var(--card-solid);
+  stroke: var(--border);
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.hero-chassis {
+  fill: var(--card-solid);
+  stroke: var(--border);
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.hero-base {
+  fill: var(--bg-soft);
+  transition: fill 0.3s ease;
 }
 
 .float-badge {
@@ -548,14 +644,9 @@ a {
   }
 
   .hero-illustration {
-    height: 260px;
     order: -1;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-illustration {
-    height: 200px;
+    max-width: 340px;
+    margin: 0 auto;
   }
 }
 
@@ -887,6 +978,7 @@ a {
 .project-grid.cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 720px;
+  margin: 0 auto;
   gap: 20px;
 }
 

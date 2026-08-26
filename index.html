@@ -42,8 +42,9 @@
 
     <div class="header-actions">
       <button id="themeBtn" class="theme-toggle" aria-label="テーマ切り替え">
-        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
-        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="display:none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+        <span id="themeLabel">ライトモード</span>
       </button>
       <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -101,7 +102,7 @@
 
       <div class="hero-illustration" aria-hidden="true">
         <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg">
-          <rect x="90" y="230" width="280" height="150" rx="14" fill="#0f1c33" stroke="#2563eb" stroke-opacity="0.5"/>
+          <rect class="hero-chassis" x="90" y="230" width="280" height="150" rx="14" stroke-width="1.5"/>
           <rect x="110" y="248" width="240" height="115" rx="6" fill="#0a1424"/>
           <rect x="126" y="264" width="60" height="6" rx="3" fill="#38bdf8"/>
           <rect x="126" y="278" width="100" height="6" rx="3" fill="#3b82f6" opacity="0.7"/>
@@ -109,23 +110,23 @@
           <rect x="126" y="306" width="120" height="6" rx="3" fill="#3b82f6" opacity="0.5"/>
           <rect x="126" y="320" width="70" height="6" rx="3" fill="#38bdf8" opacity="0.6"/>
           <rect x="126" y="334" width="90" height="6" rx="3" fill="#22d3ee" opacity="0.4"/>
-          <path d="M70 380 L390 380 L412 402 L48 402 Z" fill="#0d1b30"/>
+          <path class="hero-base" d="M70 380 L390 380 L412 402 L48 402 Z"/>
 
           <g class="float-badge">
-            <rect x="14" y="40" width="76" height="62" rx="14" fill="#0f1c33" stroke="#38bdf8" stroke-width="1.5"/>
+            <rect class="hero-badge-box" x="14" y="40" width="76" height="62" rx="14" stroke="#38bdf8" stroke-width="1.5"/>
             <text x="52" y="80" font-family="monospace" font-size="24" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
           </g>
           <g class="float-badge delay1">
-            <rect x="332" y="18" width="76" height="62" rx="14" fill="#0f1c33" stroke="#22d3ee" stroke-width="1.5"/>
+            <rect class="hero-badge-box" x="332" y="18" width="76" height="62" rx="14" stroke="#22d3ee" stroke-width="1.5"/>
             <text x="370" y="58" font-family="monospace" font-size="24" fill="#22d3ee" text-anchor="middle">{ }</text>
           </g>
           <g class="float-badge delay2">
-            <rect x="6" y="150" width="62" height="58" rx="14" fill="#0f1c33" stroke="#3b82f6" stroke-width="1.5"/>
+            <rect class="hero-badge-box" x="6" y="150" width="62" height="58" rx="14" stroke="#3b82f6" stroke-width="1.5"/>
             <ellipse cx="37" cy="169" rx="15" ry="5.5" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
             <path d="M22 169v15c0 3 6.5 5.5 15 5.5s15-2.5 15-5.5v-15" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
           </g>
           <g class="float-badge delay3">
-            <rect x="362" y="150" width="76" height="62" rx="14" fill="#0f1c33" stroke="#60a5fa" stroke-width="1.5"/>
+            <rect class="hero-badge-box" x="362" y="150" width="76" height="62" rx="14" stroke="#60a5fa" stroke-width="1.5"/>
             <polyline points="378,192 392,175 403,183 422,158" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
         </svg>
@@ -133,7 +134,7 @@
     </div>
 
     <a href="#about" class="hero-scroll-indicator" aria-label="下にスクロール">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
     </a>
   </section>
 
@@ -529,10 +530,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-0.8 0-1.5-0.7-1.5-1.5v-13z"/><path d="M20 5.5C20 4.7 19.3 4 18.5 4H12v16h6.5c0.8 0 1.5-0.7 1.5-1.5v-13z"/></svg>
             </div>
             <div class="list-body">
-              <h4>読書（ミステリー小説ベスト3）</h4>
-              <p>1位 硝子の塔の殺人（知念実希人）</p>
-              <p>2位 十角館の殺人（綾辻行人）</p>
-              <p>3位 兇人邸の殺人（今村昌弘）</p>
+              <h4>読書</h4>
+              <p>ミステリー小説が好き（綾辻行人、知念実希人など）。</p>
             </div>
           </div>
           <div class="list-item">
@@ -540,10 +539,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l3.5 2.5-1.3 4.1h-4.4L8.5 9.5z"/></svg>
             </div>
             <div class="list-body">
-              <h4>サッカー観戦（好きな選手ベスト3）</h4>
-              <p>1位 フヴィチャ・クヴァラツヘリア</p>
-              <p>2位 パウロ・マルディーニ</p>
-              <p>3位 アンドレア・ピルロ</p>
+              <h4>サッカー観戦</h4>
+              <p>海外サッカーが好き。推し選手はクヴァラツヘリア。</p>
             </div>
           </div>
           <div class="list-item">
@@ -551,10 +548,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/></svg>
             </div>
             <div class="list-body">
-              <h4>映画鑑賞（歴代ベスト3）</h4>
-              <p>1位 ロード・オブ・ザ・リング</p>
-              <p>2位 ハリー・ポッター</p>
-              <p>3位 ナイブズ・アウト</p>
+              <h4>映画鑑賞</h4>
+              <p>洋画が好き。「ロード・オブ・ザ・リング」がお気に入り。</p>
             </div>
           </div>
           <div class="list-item">
@@ -583,6 +578,15 @@
             <div class="list-body">
               <h4>Email</h4>
               <p><a href="mailto:kouta2000.3.3.369@icloud.com">kouta2000.3.3.369@icloud.com</a></p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+            </div>
+            <div class="list-body">
+              <h4>Sub Email</h4>
+              <p><a href="mailto:kouta47406552@gmail.com">kouta47406552@gmail.com</a></p>
             </div>
           </div>
           <div class="list-item">

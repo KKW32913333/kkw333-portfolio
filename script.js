@@ -6,16 +6,19 @@
   const btn = document.getElementById("themeBtn");
   const sunIcon = document.getElementById("themeIconSun");
   const moonIcon = document.getElementById("themeIconMoon");
+  const label = document.getElementById("themeLabel");
 
   function applyTheme(theme) {
     if (theme === "dark") {
       root.setAttribute("data-theme", "dark");
       sunIcon.style.display = "none";
       moonIcon.style.display = "block";
+      label.textContent = "ダークモード";
     } else {
       root.removeAttribute("data-theme");
       sunIcon.style.display = "block";
       moonIcon.style.display = "none";
+      label.textContent = "ライトモード";
     }
   }
 
