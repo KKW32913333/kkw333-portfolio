@@ -857,6 +857,10 @@ a {
   color: #fff;
 }
 
+.project-status-badge.pending {
+  background: rgba(100, 116, 139, 0.9);
+}
+
 .project-card-body {
   padding: 22px;
   display: flex;
