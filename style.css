@@ -1116,6 +1116,55 @@ a {
   color: var(--accent);
 }
 
+/* ================================
+   実務経歴：経験分野グリッド
+================================ */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.experience-item:hover {
+  border-color: var(--accent);
+}
+
+.experience-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.experience-item .exp-body h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.experience-item .exp-body p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 480px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .list-item {
   display: flex;
   gap: 12px;
