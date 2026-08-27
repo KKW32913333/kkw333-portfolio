@@ -67,6 +67,14 @@
 
 <main id="top">
   <section class="hero" id="hero">
+    <div class="hero-bg-slider" aria-hidden="true">
+      <div class="hero-bg-track">
+        <div class="hero-bg-slide" style="background-image:url('images/hero-bg.jpg')"></div>
+        <div class="hero-bg-slide" style="background-image:url('images/hero-bg2.jpg')"></div>
+        <div class="hero-bg-slide" style="background-image:url('images/hero-bg.jpg')"></div>
+      </div>
+    </div>
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
     <div class="hero-blob b1" aria-hidden="true"></div>
     <div class="hero-blob b2" aria-hidden="true"></div>
     <div class="hero-blob b3" aria-hidden="true"></div>
@@ -107,7 +115,11 @@
       </div>
 
       <div class="hero-mobile-illustration">
-        <img src="images/hero-mobile.jpg" alt="" loading="eager">
+        <div class="hero-bg-track hero-bg-track-mobile">
+          <div class="hero-bg-slide" style="background-image:url('images/hero-mobile.jpg')"></div>
+          <div class="hero-bg-slide" style="background-image:url('images/hero-mobile2.jpg')"></div>
+          <div class="hero-bg-slide" style="background-image:url('images/hero-mobile.jpg')"></div>
+        </div>
       </div>
     </div>
 

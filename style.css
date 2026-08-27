@@ -333,11 +333,43 @@ a {
   min-height: 600px;
   display: flex;
   align-items: center;
-  background-image:
-    linear-gradient(100deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 30%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0.08) 75%),
-    url("images/hero-bg.jpg");
+  background: #eef3fc;
+}
+
+.hero-bg-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-bg-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: hero-slide 16s ease-in-out infinite;
+}
+
+.hero-bg-slide {
+  width: 33.3333%;
+  height: 100%;
+  flex-shrink: 0;
   background-size: cover;
   background-position: right center;
+}
+
+@keyframes hero-slide {
+  0%, 42% { transform: translateX(0%); }
+  50%, 92% { transform: translateX(-33.3333%); }
+  100% { transform: translateX(-66.6666%); }
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 30%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0.08) 75%);
 }
 
 .hero-blob {
@@ -347,6 +379,7 @@ a {
   pointer-events: none;
   opacity: 0.5;
   animation: blob-drift 10s ease-in-out infinite;
+  z-index: 2;
 }
 
 .hero-blob.b1 {
@@ -384,8 +417,12 @@ a {
 @media (max-width: 900px) {
   .hero {
     min-height: 0;
-    background-image:
-      linear-gradient(160deg, #eef3fc 0%, #e7edfa 50%, #eaf2fb 100%);
+    background: linear-gradient(160deg, #eef3fc 0%, #e7edfa 50%, #eaf2fb 100%);
+  }
+
+  .hero-bg-slider,
+  .hero-bg-overlay {
+    display: none;
   }
 }
 
@@ -402,12 +439,15 @@ a {
     box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
     border: 1px solid rgba(15, 23, 42, 0.08);
     animation: floaty 5s ease-in-out infinite;
+    position: relative;
+    aspect-ratio: 900 / 775;
   }
 
-  .hero-mobile-illustration img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .hero-bg-track-mobile {
+    position: absolute;
+    inset: 0;
+    width: 300%;
+    height: 100%;
   }
 }
 
@@ -444,6 +484,7 @@ a {
   max-width: 1240px;
   margin: 0 auto;
   width: 100%;
+  z-index: 3;
 }
 
 .hero-copy {
@@ -559,6 +600,7 @@ a {
   position: absolute;
   bottom: 20px;
   left: 50%;
+  z-index: 3;
   transform: translateX(-50%);
   color: var(--accent);
   animation: bounce 2.2s ease-in-out infinite;
