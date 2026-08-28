@@ -83,7 +83,7 @@ a {
   }
 
   .hero-bg-track {
-    animation-duration: 8s !important;
+    animation-duration: 10s !important;
     animation-iteration-count: infinite !important;
   }
 }
@@ -352,7 +352,7 @@ a {
   display: flex;
   width: 300%;
   height: 100%;
-  animation: hero-slide 8s ease-in-out infinite;
+  animation: hero-slide 10s ease-in-out infinite;
 }
 
 .hero-bg-slide {
