@@ -431,7 +431,7 @@ a {
   }
 
   .hero-bg-slide {
-    background-position: right center;
+    background-position: center center;
   }
 
   .hero-bg-slide:nth-child(2) {
