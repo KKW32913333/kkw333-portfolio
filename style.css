@@ -422,37 +422,18 @@ a {
 @media (max-width: 900px) {
   .hero {
     min-height: 0;
-    background: linear-gradient(160deg, #eef3fc 0%, #e7edfa 50%, #eaf2fb 100%);
+    padding-top: 80px;
+    padding-bottom: 56px;
   }
 
-  .hero-bg-slider,
   .hero-bg-overlay {
-    display: none;
-  }
-}
-
-.hero-mobile-illustration {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .hero-mobile-illustration {
-    display: block;
-    margin-top: 28px;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    animation: floaty 5s ease-in-out infinite;
-    position: relative;
-    aspect-ratio: 900 / 775;
+    background-image: none;
+    background:
+      radial-gradient(ellipse 120% 90% at 50% 20%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 45%, rgba(255, 255, 255, 0.8) 75%, rgba(255, 255, 255, 0.72) 100%);
   }
 
-  .hero-bg-track-mobile {
-    position: absolute;
-    inset: 0;
-    width: 300%;
-    height: 100%;
+  .hero-bg-slide {
+    background-position: center 30%;
   }
 }
 
