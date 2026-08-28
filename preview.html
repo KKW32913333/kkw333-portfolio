@@ -441,21 +441,19 @@ a {
   .hero {
     min-height: 0;
     padding-top: 80px;
-    padding-bottom: 140px;
+    padding-bottom: 64px;
   }
 
   .hero-bg-overlay {
-    background-image: none;
-    background:
-      radial-gradient(ellipse 120% 90% at 50% 15%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.08) 100%);
+    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.72) 32%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.1) 78%);
   }
 
   .hero-bg-slide {
-    background-position: center 88%;
+    background-position: right center;
   }
 
   .hero-bg-slide:nth-child(2) {
-    background-position: 78% 88%;
+    background-position: right center;
   }
 }
 
@@ -631,18 +629,12 @@ a {
 }
 
 @media (max-width: 900px) {
-  .hero {
-    text-align: center;
-  }
-
   .hero-text {
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 260px;
   }
 
   .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
