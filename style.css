@@ -429,7 +429,7 @@ a {
   .hero-bg-overlay {
     background-image: none;
     background:
-      radial-gradient(ellipse 120% 90% at 50% 20%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 45%, rgba(255, 255, 255, 0.8) 75%, rgba(255, 255, 255, 0.72) 100%);
+      radial-gradient(ellipse 120% 90% at 50% 15%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 35%, rgba(255, 255, 255, 0.35) 65%, rgba(255, 255, 255, 0.2) 100%);
   }
 
   .hero-bg-slide {
@@ -563,12 +563,10 @@ a {
 .primary-btn {
   background: linear-gradient(120deg, var(--accent), var(--accent3));
   color: #fff;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
 }
 
 .primary-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
 }
 
 .ghost-btn {
