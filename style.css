@@ -81,6 +81,11 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .hero-bg-track {
+    animation-duration: 8s !important;
+    animation-iteration-count: infinite !important;
+  }
 }
 
 /* ================================
