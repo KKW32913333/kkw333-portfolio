@@ -447,11 +447,15 @@ a {
   .hero-bg-overlay {
     background-image: none;
     background:
-      radial-gradient(ellipse 120% 90% at 50% 15%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 35%, rgba(255, 255, 255, 0.35) 65%, rgba(255, 255, 255, 0.2) 100%);
+      radial-gradient(ellipse 120% 90% at 50% 15%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.18) 100%);
   }
 
   .hero-bg-slide {
     background-position: center 30%;
+  }
+
+  .hero-bg-slide:nth-child(2) {
+    background-position: 75% 30%;
   }
 }
 
@@ -498,6 +502,12 @@ a {
 @media (max-width: 900px) {
   .hero-copy {
     max-width: none;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    padding: 28px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
   }
 }
 
@@ -1485,8 +1495,7 @@ a {
         <h1 class="hero-title">@KKW333</h1>
         <p class="hero-subtitle">IT Engineer<span class="hero-cursor">_</span></p>
         <p class="hero-text">
-          ITエンジニア歴：5年目<br>
-          システム開発が好きなITエンジニアです。
+          ITエンジニア歴：5年目
         </p>
         <div class="hero-actions">
           <a href="#about" class="btn primary-btn">
