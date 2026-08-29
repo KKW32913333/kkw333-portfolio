@@ -692,9 +692,12 @@ a {
 ================================ */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px;
-  align-items: stretch;
+}
+
+.about-grid .card {
+  padding: 36px 40px;
 }
 
 .about-grid .card p {
@@ -705,43 +708,6 @@ a {
 
 .about-grid .card p:last-child {
   margin-bottom: 0;
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.tech-badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--bg-soft);
-  font-weight: 600;
-  font-size: 0.88rem;
-  transition: var(--transition);
-}
-
-.tech-badge:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
-}
-
-.tech-badge:hover svg {
-  transform: rotate(-8deg) scale(1.1);
-}
-
-.tech-badge svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.3s ease;
 }
 
 @media (max-width: 860px) {
