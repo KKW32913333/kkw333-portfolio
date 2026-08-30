@@ -1076,6 +1076,12 @@ a {
   color: var(--text);
 }
 
+.project-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .project-btn.ghost:hover {
   border-color: var(--accent);
   color: var(--accent);
