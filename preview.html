@@ -640,6 +640,51 @@ a {
 }
 
 /* ================================
+   統計ストリップ
+================================ */
+.stats-strip {
+  background: var(--card-solid);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 24px;
+}
+
+.stats-strip-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 0 12px;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .stats-strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+}
+
+/* ================================
    セクション共通
 ================================ */
 .section {
@@ -688,6 +733,35 @@ a {
   font-size: 0.92rem;
   color: var(--text-muted);
   margin-top: 6px;
+}
+
+.resume-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.resume-download-link:hover {
+  border-color: var(--accent);
+  background: var(--card-solid);
+  transform: translateY(-2px);
+}
+
+.resume-download-link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .card {
@@ -1478,6 +1552,27 @@ a {
     </a>
   </section>
 
+  <section class="stats-strip reveal" aria-label="実績サマリー">
+    <div class="stats-strip-inner">
+      <div class="stat-item">
+        <p class="stat-number" data-count-to="5" data-suffix="年+">0</p>
+        <p class="stat-label">開発経験年数</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number" data-count-to="4" data-suffix="件">0</p>
+        <p class="stat-label">リリース済みプロジェクト</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number" data-count-to="6" data-suffix="件">0</p>
+        <p class="stat-label">取得資格</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number" data-count-to="7" data-suffix="工程">0</p>
+        <p class="stat-label">経験した開発工程</p>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="section reveal" aria-labelledby="about-title">
     <div class="section-header">
       <p class="section-eyebrow">About</p>
@@ -1498,6 +1593,10 @@ a {
       <p class="section-eyebrow">Career</p>
       <h2 id="career-title">実務経歴</h2>
       <p class="section-subtitle">金融系SIerでの開発経験</p>
+      <a href="resume.pdf" class="resume-download-link" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><polyline points="7 11 12 16 17 11"/><path d="M4 19h16"/></svg>
+        職務経歴書をダウンロード（PDF）
+      </a>
     </div>
 
     <div class="two-col-grid">
@@ -2180,6 +2279,49 @@ document.querySelectorAll(".mobile-nav-panel a").forEach((link) => {
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+})();
+
+
+// ===============================
+// 統計ストリップ：カウントアップ
+// ===============================
+(function () {
+  const statNumbers = document.querySelectorAll(".stat-number");
+  if (!statNumbers.length) return;
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.countTo, 10) || 0;
+    const suffix = el.dataset.suffix || "";
+    const duration = 1200;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = value + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  statNumbers.forEach((el) => observer.observe(el));
 })();
 
 </script>

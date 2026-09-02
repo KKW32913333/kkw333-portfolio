@@ -126,3 +126,46 @@ document.querySelectorAll(".mobile-nav-panel a").forEach((link) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
+
+
+// ===============================
+// 統計ストリップ：カウントアップ
+// ===============================
+(function () {
+  const statNumbers = document.querySelectorAll(".stat-number");
+  if (!statNumbers.length) return;
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.countTo, 10) || 0;
+    const suffix = el.dataset.suffix || "";
+    const duration = 1200;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = value + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  statNumbers.forEach((el) => observer.observe(el));
+})();
